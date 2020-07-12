@@ -1,17 +1,17 @@
 import random
 
-guesses_made = 0
+guess_made = 0
 
 name = input('Hello! What is your name?\n')
 
 number = random.randint(1, 20)
 print('Well, {0}, I am thinking of a number between 1 and 20.'.format(name))
 
-while guesses_made < 6:
+while guess_made < 6:
 
     guess = int(input('Take a guess: '))
 
-    guesses_made += 1
+    guess_made += 1
 
     if guess < number:
         print('Your guess is too low.')
@@ -23,6 +23,6 @@ while guesses_made < 6:
         break
 
 if guess == number:
-    print(f'Good job, {name}! You guessed my number in {guesses_made} guesses!')
+    print(f'Good job, {name}! You guessed my number in {guess_made} guesses!')
 else:
     print('Nope. The number I was thinking of was {0}'.format(number))
