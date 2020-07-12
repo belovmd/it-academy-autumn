@@ -8,6 +8,7 @@ dinner_recipe = '''<html><body><table>
 
 # From http://effbot.org/zone/element-index.htm
 import xml.etree.ElementTree as etree
+
 tree = etree.fromstring(dinner_recipe)
 
 # For invalid HTML use http://effbot.org/zone/element-soup.htm
