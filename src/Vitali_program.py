@@ -1,13 +1,14 @@
 # 1
 import csv
 import itertools
+from itertools import groupby
+from time import localtime
 import random
 import re
 import sys
 import unittest
-from itertools import groupby
 import xml.etree.ElementTree as etree
-from time import localtime
+
 
 print('Hello, world!')
 
@@ -179,6 +180,7 @@ for has_chars, frags in groupby(lines, bool):
 # This is the second.
 
 # 16
+
 
 # need to define cmp function in Python 3
 def cmp(a, b):
