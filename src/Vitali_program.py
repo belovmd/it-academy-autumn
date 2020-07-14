@@ -1,15 +1,13 @@
 # 1
-import re
-import sys
-from time import localtime
-import doctest
-import unittest
 import csv
-from itertools import groupby
-
 import itertools
 import random
+import re
+import sys
+import unittest
 import xml.etree.ElementTree as etree
+from itertools import groupby
+from time import localtime
 
 print('Hello, world!')
 
