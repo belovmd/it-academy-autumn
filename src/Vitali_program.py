@@ -2,13 +2,14 @@
 import re
 import sys
 from time import localtime
-import unittest
 import doctest
-from itertools import groupby
+import unittest
 import csv
+from itertools import groupby
+
 import itertools
-import xml.etree.ElementTree as etree
 import random
+import xml.etree.ElementTree as etree
 
 print('Hello, world!')
 
@@ -39,7 +40,6 @@ greet('Bob')
 
 # 6
 
-
 for test_string in ['555-1212', 'ILL-EGAL']:
     if re.match(r'^\d{3}-\d{4}$', test_string):
         print(test_string, 'is a valid US local phone number')
@@ -56,9 +56,7 @@ grocery_bill = sum(prices[fruit] * my_purchase[fruit]
                    for fruit in my_purchase)
 print('I owe the groser $%.2f' % grocery_bill)
 
-# 8 
-
-
+#8
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
     print('sum =', total)
@@ -79,7 +77,6 @@ except ValueError:
 
 #
 # 10
-
 
 activities = {8: 'Sleeping',
               9: 'Commuting',
@@ -111,7 +108,6 @@ while bottles_of_beer > 1:
                      bottles_of_beer - 1))
     bottles_of_beer -= 1
 
-
 # 12
 class BankAccount(object):
     def __init__(self, initial_balance=0):
@@ -131,10 +127,7 @@ my_account = BankAccount(15)
 my_account.withdraw(50)
 print(my_account.balance, my_account.overdrawn())
 
-
 # 13
-
-
 def median(pool):
     copy = sorted(pool)
     size = len(copy)
@@ -152,28 +145,24 @@ class TestMedian(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 
-
 # 14
-def median(pool):
-    '''Statistical median to demonstrate doctest.
-
-    6 #change to 7 in order to pass the test
-    '''
-    median([2, 9, 9, 7, 9, 2, 4, 5, 8])
-    copy = sorted(pool)
-    size = len(copy)
-    if size % 2 == 1:
-        return copy[int((size - 1) / 2)]
-    else:
-        return (copy[int(size / 2 - 1)] + copy[int(size / 2)]) / 2
-
-
-if __name__ == '__main__':
-    doctest.testmod()
-
-# 15
-
-
+# def median(pool):
+#     '''Statistical median to demonstrate doctest.
+#
+#     6 #change to 7 in order to pass the test
+#     '''
+#     median([2, 9, 9, 7, 9, 2, 4, 5, 8])
+#     copy = sorted(pool)
+#     size = len(copy)
+#     if size % 2 == 1:
+#         return copy[int((size - 1) / 2)]
+#     else:
+#         return (copy[int(size / 2 - 1)] + copy[int(size / 2)]) / 2
+#
+# if __name__ == '__main__':
+#     doctest.testmod()
+#
+# # 15
 lines = '''
 This is the
 first paragraph.
@@ -191,12 +180,9 @@ for has_chars, frags in groupby(lines, bool):
 
 # 16
 
-
-
 # need to define cmp function in Python 3
 def cmp(a, b):
     return (a > b) - (a < b)
-
 
 # write stocks data as comma-separated values
 with open('stocks.csv', 'w', newline='') as stocksFileW:
@@ -218,7 +204,6 @@ with open('stocks.csv', 'r') as stocksFile:
 
 # 18
 BOARD_SIZE = 8
-
 
 def under_attack(col, queens):
     left = right = col
@@ -247,9 +232,6 @@ for answer in solve(BOARD_SIZE):
     print(answer)
 
 # 20
-
-
-
 def iter_primes():
     # an iterator of all numbers between 2 and +infinity
     numbers = itertools.count(2)
@@ -280,8 +262,6 @@ dinner_recipe = '''<html><body><table>
 </table></body></html>'''
 
 # From http://effbot.org/zone/element-index.htm
-
-
 tree = etree.fromstring(dinner_recipe)
 
 # For invalid HTML use http://effbot.org/zone/element-soup.htm
@@ -329,8 +309,6 @@ print(queens)
 print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
 
 # 33
-
-
 guesses_made = 0
 name = input('Hello! What is your name?\n')
 number = random.randint(1, 20)
@@ -348,6 +326,6 @@ while guesses_made < 6:
         break
 
 if guess == number:
-    print('Good job, {0}! You guessed my number in {1} guesses!'.format(name, guesses_made))
+    print('Good job, {0}!My number in {1} guesses!'.format(name, guesses_made))
 else:
     print('Nope. The number I was thinking of was {0}'.format(number))
