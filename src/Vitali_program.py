@@ -1,9 +1,9 @@
-#1
+# 1
 print('Hello, world!')
 
-# #2
-# name = input('What is your name?\n')
-# print('Hi, %s.' % name)
+# 2
+name = input('What is your name?\n')
+print('Hi, %s.' % name)
 
 # 3
 friends = ['john', 'pat', 'gary', 'michael']
@@ -17,33 +17,37 @@ while babies < 100:
     parents, babies = (babies, parents + babies)
 
 
-#5
+# 5
 def greet(name):
     print('Hello', name)
+
+
 greet('Jack')
 greet('Jill')
 greet('Bob')
 
-#6
+# 6
 import re
+
 for test_string in ['555-1212', 'ILL-EGAL']:
     if re.match(r'^\d{3}-\d{4}$', test_string):
         print(test_string, 'is a valid US local phone number')
     else:
         print(test_string, 'regected')
 
-#7
+# 7
 prices = {'apple': 0.40, 'banana': 0.50}
 my_purchase = {
     'apple': 1,
     'banana': 6
 }
-grocery_bill = sum(prices[fruit]*my_purchase[fruit]
+grocery_bill = sum(prices[fruit] * my_purchase[fruit]
                    for fruit in my_purchase)
 print('I owe the groser $%.2f' % grocery_bill)
 
-#8 This program adds up integers that have benn passed as arguments in the command line
+# 8 This program adds up integers that have benn passed as arguments in the command line
 import sys
+
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
     print('sum =', total)
@@ -63,7 +67,7 @@ except ValueError:
 #     print()
 
 #
-#10
+# 10
 from time import localtime
 
 activities = {8: 'Sleeping',
@@ -71,19 +75,19 @@ activities = {8: 'Sleeping',
               17: 'Working',
               18: 'Commuting',
               20: 'Eating',
-              22: 'Resting' }
+              22: 'Resting'}
 
 time_now = localtime()
 hour = time_now.tm_hour
 
 for activity_time in sorted(activities.keys()):
     if hour < activity_time:
-        print (activities[activity_time])
+        print(activities[activity_time])
         break
     else:
-        print ('Unknown, AFK or sleeping!')
+        print('Unknown, AFK or sleeping!')
 
-#11
+# 11
 REFRAIN = '''
 %d bottles of beer on the wall,
 %d bottles of beer,
@@ -92,40 +96,53 @@ take one down, pass it around,
 '''
 bottles_of_beer = 9
 while bottles_of_beer > 1:
-    print (REFRAIN % (bottles_of_beer, bottles_of_beer,
-        bottles_of_beer - 1))
+    print(REFRAIN % (bottles_of_beer, bottles_of_beer,
+                     bottles_of_beer - 1))
     bottles_of_beer -= 1
 
-#12
+
+# 12
 class BankAccount(object):
     def __init__(self, initial_balance=0):
         self.balance = initial_balance
+
     def deposit(self, amount):
         self.balance += amount
+
     def withdraw(self, amount):
         self.balance -= amount
+
     def overdrawn(self):
         return self.balance < 0
+
+
 my_account = BankAccount(15)
 my_account.withdraw(50)
-print (my_account.balance, my_account.overdrawn())
+print(my_account.balance, my_account.overdrawn())
 
-#13
+# 13
 import unittest
+
+
 def median(pool):
     copy = sorted(pool)
     size = len(copy)
     if size % 2 == 1:
         return copy(int((size - 1) / 2))
     else:
-        return (copy[int(size/2 - 1)] + copy[int(size/2)]) / 2
+        return (copy[int(size / 2 - 1)] + copy[int(size / 2)]) / 2
+
+
 class TestMedian(unittest.TestCase):
     def testMedian(self):
         self.assertEqual(median([2, 9, 9, 7, 9, 2, 4, 5, 8]), 7)
+
+
 if __name__ == '__main__':
     unittest.main()
 
-#14
+
+# 14
 def median(pool):
     '''Statistical median to demonstrate doctest.
 
@@ -137,13 +154,17 @@ def median(pool):
     if size % 2 == 1:
         return copy[int((size - 1) / 2)]
     else:
-        return (copy[int(size/2 - 1)] + copy[int(size/2)]) / 2
+        return (copy[int(size / 2 - 1)] + copy[int(size / 2)]) / 2
+
+
 if __name__ == '__main__':
     import doctest
+
     doctest.testmod()
 
-#15
+# 15
 from itertools import groupby
+
 lines = '''
 This is the
 first paragraph.
@@ -154,17 +175,19 @@ This is the second.
 # consecutive lines that either have content or don't.
 for has_chars, frags in groupby(lines, bool):
     if has_chars:
-        print (' '.join(frags))
+        print(' '.join(frags))
 # PRINTS:
 # This is the first paragraph.
 # This is the second.
 
-#16
+# 16
 import csv
+
 
 # need to define cmp function in Python 3
 def cmp(a, b):
     return (a > b) - (a < b)
+
 
 # write stocks data as comma-separated values
 with open('stocks.csv', 'w', newline='') as stocksFileW:
@@ -182,10 +205,11 @@ with open('stocks.csv', 'r') as stocksFile:
     status_labels = {-1: 'down', 0: 'unchanged', 1: 'up'}
     for ticker, name, price, change, pct in stocks:
         status = status_labels[cmp(float(change), 0.0)]
-        print ('%s is %s (%.2f)' % (name, status, float(pct)))
+        print('%s is %s (%.2f)' % (name, status, float(pct)))
 
-#18
+# 18
 BOARD_SIZE = 8
+
 
 def under_attack(col, queens):
     left = right = col
@@ -197,42 +221,47 @@ def under_attack(col, queens):
             return True
     return False
 
+
 def solve(n):
     if n == 0:
         return [[]]
 
     smaller_solutions = solve(n - 1)
 
-    return [solution+[(n,i+1)]
-        for i in range(BOARD_SIZE)
+    return [solution + [(n, i + 1)]
+            for i in range(BOARD_SIZE)
             for solution in smaller_solutions
-                if not under_attack(i+1, solution)]
-for answer in solve(BOARD_SIZE):
-    print (answer)
+            if not under_attack(i + 1, solution)]
 
-#20
+
+for answer in solve(BOARD_SIZE):
+    print(answer)
+
+# 20
 import itertools
 
+
 def iter_primes():
-     # an iterator of all numbers between 2 and +infinity
-     numbers = itertools.count(2)
+    # an iterator of all numbers between 2 and +infinity
+    numbers = itertools.count(2)
 
-     # generate primes forever
-     while True:
-         # get the first number from the iterator (always a prime)
-         prime = next(numbers)
-         yield prime
+    # generate primes forever
+    while True:
+        # get the first number from the iterator (always a prime)
+        prime = next(numbers)
+        yield prime
 
-         # this code iteratively builds up a chain of
-         # filters...slightly tricky, but ponder it a bit
-         numbers = filter(prime.__rmod__, numbers)
+        # this code iteratively builds up a chain of
+        # filters...slightly tricky, but ponder it a bit
+        numbers = filter(prime.__rmod__, numbers)
+
 
 for p in iter_primes():
     if p > 1000:
         break
-    print (p)
+    print(p)
 
-#21
+# 21
 dinner_recipe = '''<html><body><table>
 <tr><th>amt</th><th>unit</th><th>item</th></tr>
 <tr><td>24</td><td>slices</td><td>baguette</td></tr>
@@ -243,6 +272,7 @@ dinner_recipe = '''<html><body><table>
 
 # From http://effbot.org/zone/element-index.htm
 import xml.etree.ElementTree as etree
+
 tree = etree.fromstring(dinner_recipe)
 
 # For invalid HTML use http://effbot.org/zone/element-soup.htm
@@ -253,20 +283,23 @@ pantry = set(['olive oil', 'pesto'])
 for ingredient in tree.getiterator('tr'):
     amt, unit, item = ingredient
     if item.tag == "td" and item.text not in pantry:
-        print ("%s: %s %s" % (item.text, amt.text, unit.text))
+        print("%s: %s %s" % (item.text, amt.text, unit.text))
 
-#28
+# 28
 BOARD_SIZE = 8
+
 
 class BailOut(Exception):
     pass
 
+
 def validate(queens):
     left = right = col = queens[-1]
     for r in reversed(queens[:-1]):
-        left, right = left-1, right+1
+        left, right = left - 1, right + 1
         if r in (left, col, right):
             raise BailOut
+
 
 def add_queen(queens):
     for i in range(BOARD_SIZE):
@@ -281,172 +314,31 @@ def add_queen(queens):
             pass
     raise BailOut
 
-queens = add_queen([])
-print (queens)
-print ("\n".join(". "*q + "Q " + ". "*(BOARD_SIZE-q-1) for q in queens))
 
-#33
+queens = add_queen([])
+print(queens)
+print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
+
+# 33
 import random
+
 guesses_made = 0
 name = input('Hello! What is your name?\n')
 number = random.randint(1, 20)
-print ('Well, {0}, I am thinking of a number between 1 and 20.'.format(name))
+print('Well, {0}, I am thinking of a number between 1 and 20.'.format(name))
 while guesses_made < 6:
     guess = int(input('Take a guess: '))
     guesses_made += 1
     if guess < number:
-        print ('Your guess is too low.')
+        print('Your guess is too low.')
 
     if guess > number:
-        print ('Your guess is too high.')
+        print('Your guess is too high.')
 
     if guess == number:
         break
 
 if guess == number:
-    print ('Good job, {0}! You guessed my number in {1} guesses!'.format(name, guesses_made))
+    print('Good job, {0}! You guessed my number in {1} guesses!'.format(name, guesses_made))
 else:
-    print ('Nope. The number I was thinking of was {0}'.format(number))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    print('Nope. The number I was thinking of was {0}'.format(number))
