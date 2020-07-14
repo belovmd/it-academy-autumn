@@ -5,8 +5,8 @@ import random
 import re
 import sys
 import unittest
-import xml.etree.ElementTree as etree
 from itertools import groupby
+import xml.etree.ElementTree as etree
 from time import localtime
 
 print('Hello, world!')
@@ -54,7 +54,7 @@ grocery_bill = sum(prices[fruit] * my_purchase[fruit]
                    for fruit in my_purchase)
 print('I owe the groser $%.2f' % grocery_bill)
 
-#8
+
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
     print('sum =', total)
@@ -106,6 +106,7 @@ while bottles_of_beer > 1:
                      bottles_of_beer - 1))
     bottles_of_beer -= 1
 
+
 # 12
 class BankAccount(object):
     def __init__(self, initial_balance=0):
@@ -124,6 +125,7 @@ class BankAccount(object):
 my_account = BankAccount(15)
 my_account.withdraw(50)
 print(my_account.balance, my_account.overdrawn())
+
 
 # 13
 def median(pool):
@@ -182,6 +184,7 @@ for has_chars, frags in groupby(lines, bool):
 def cmp(a, b):
     return (a > b) - (a < b)
 
+
 # write stocks data as comma-separated values
 with open('stocks.csv', 'w', newline='') as stocksFileW:
     writer = csv.writer(stocksFileW)
@@ -202,6 +205,7 @@ with open('stocks.csv', 'r') as stocksFile:
 
 # 18
 BOARD_SIZE = 8
+
 
 def under_attack(col, queens):
     left = right = col
@@ -228,6 +232,7 @@ def solve(n):
 
 for answer in solve(BOARD_SIZE):
     print(answer)
+
 
 # 20
 def iter_primes():
