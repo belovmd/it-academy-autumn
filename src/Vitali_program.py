@@ -1,4 +1,15 @@
 # 1
+import re
+import sys
+from time import localtime
+import unittest
+import doctest
+from itertools import groupby
+import csv
+import itertools
+import xml.etree.ElementTree as etree
+import random
+
 print('Hello, world!')
 
 # 2
@@ -27,7 +38,7 @@ greet('Jill')
 greet('Bob')
 
 # 6
-import re
+
 
 for test_string in ['555-1212', 'ILL-EGAL']:
     if re.match(r'^\d{3}-\d{4}$', test_string):
@@ -45,8 +56,8 @@ grocery_bill = sum(prices[fruit] * my_purchase[fruit]
                    for fruit in my_purchase)
 print('I owe the groser $%.2f' % grocery_bill)
 
-# 8 This program adds up integers that have benn passed as arguments in the command line
-import sys
+# 8 
+
 
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
@@ -68,7 +79,7 @@ except ValueError:
 
 #
 # 10
-from time import localtime
+
 
 activities = {8: 'Sleeping',
               9: 'Commuting',
@@ -120,15 +131,15 @@ my_account = BankAccount(15)
 my_account.withdraw(50)
 print(my_account.balance, my_account.overdrawn())
 
+
 # 13
-import unittest
 
 
 def median(pool):
     copy = sorted(pool)
     size = len(copy)
     if size % 2 == 1:
-        return copy(int((size - 1) / 2))
+        return copy[int((size - 1) / 2)]
     else:
         return (copy[int(size / 2 - 1)] + copy[int(size / 2)]) / 2
 
@@ -158,12 +169,10 @@ def median(pool):
 
 
 if __name__ == '__main__':
-    import doctest
-
     doctest.testmod()
 
 # 15
-from itertools import groupby
+
 
 lines = '''
 This is the
@@ -181,7 +190,7 @@ for has_chars, frags in groupby(lines, bool):
 # This is the second.
 
 # 16
-import csv
+
 
 
 # need to define cmp function in Python 3
@@ -238,7 +247,7 @@ for answer in solve(BOARD_SIZE):
     print(answer)
 
 # 20
-import itertools
+
 
 
 def iter_primes():
@@ -271,7 +280,7 @@ dinner_recipe = '''<html><body><table>
 </table></body></html>'''
 
 # From http://effbot.org/zone/element-index.htm
-import xml.etree.ElementTree as etree
+
 
 tree = etree.fromstring(dinner_recipe)
 
@@ -320,7 +329,7 @@ print(queens)
 print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
 
 # 33
-import random
+
 
 guesses_made = 0
 name = input('Hello! What is your name?\n')
