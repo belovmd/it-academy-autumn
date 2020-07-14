@@ -17,12 +17,12 @@ while guesses_made < 6:
         print("Your guess is too low.")
 
     if guess > number:
-        print("Your guess is too high."
+        print("Your guess is too high.")
 
     if guess == number:
         break
 
 if guess == number:
-    print(f"Good job, {name}! You guessed my number in {guesses_made} guesses!")
+    print("Good job, {0}! You guessed my number in {1} guesses!".format(name, guesses_made))
 else:
     print("Nope! The number I was thinking of was {0}.".format(number))
