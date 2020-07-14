@@ -1,9 +1,9 @@
 #1
 print('Hello, world!')
 
-#2
-name = input('What is your name?\n')
-print('Hi, %s.' % name)
+# #2
+# name = input('What is your name?\n')
+# print('Hi, %s.' % name)
 
 # 3
 friends = ['john', 'pat', 'gary', 'michael']
@@ -50,19 +50,19 @@ try:
 except ValueError:
     print('Please supply integer arguments')
 
-#9 indent your Python code to put into an email
-import glob
-#glob supports Unix style pathname extensions
-python_files = glob.glob('*.py')
-for file_name in sorted(python_files):
-    print('    ----' + file_name)
+# #9 indent your Python code to put into an email
+# import glob
+# #glob supports Unix style pathname extensions
+# python_files = glob.glob('*.py')
+# for file_name in sorted(python_files):
+#     print('    ----' + file_name)
+#
+#     with open(file_name) as f:
+#         for line in f:
+#             print('   ' + line.rstrip())
+#     print()
 
-    with open(file_name) as f:
-        for line in f:
-            print('   ' + line.rstrip())
-    print()
-
-
+#
 #10
 from time import localtime
 
@@ -80,8 +80,8 @@ for activity_time in sorted(activities.keys()):
     if hour < activity_time:
         print (activities[activity_time])
         break
-else:
-    print ('Unknown, AFK or sleeping!')
+    else:
+        print ('Unknown, AFK or sleeping!')
 
 #11
 REFRAIN = '''
@@ -116,7 +116,7 @@ def median(pool):
     copy = sorted(pool)
     size = len(copy)
     if size % 2 == 1:
-        return copy[int((size - 1) / 2)]
+        return copy(int((size - 1) / 2))
     else:
         return (copy[int(size/2 - 1)] + copy[int(size/2)]) / 2
 class TestMedian(unittest.TestCase):
@@ -128,9 +128,10 @@ if __name__ == '__main__':
 #14
 def median(pool):
     '''Statistical median to demonstrate doctest.
-    >>> median([2, 9, 9, 7, 9, 2, 4, 5, 8])
+
     6 #change to 7 in order to pass the test
     '''
+    median([2, 9, 9, 7, 9, 2, 4, 5, 8])
     copy = sorted(pool)
     size = len(copy)
     if size % 2 == 1:
@@ -286,20 +287,13 @@ print ("\n".join(". "*q + "Q " + ". "*(BOARD_SIZE-q-1) for q in queens))
 
 #33
 import random
-
 guesses_made = 0
-
 name = input('Hello! What is your name?\n')
-
 number = random.randint(1, 20)
 print ('Well, {0}, I am thinking of a number between 1 and 20.'.format(name))
-
 while guesses_made < 6:
-
     guess = int(input('Take a guess: '))
-
     guesses_made += 1
-
     if guess < number:
         print ('Your guess is too low.')
 
