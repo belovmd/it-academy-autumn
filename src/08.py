@@ -1,4 +1,5 @@
-# This command adds up integers that have been passed arguments in the command line
+# This command adds up integers that have been
+# passed arguments in the command line
 import sys
 
 try:
