@@ -2,8 +2,8 @@
 import csv
 import itertools
 from itertools import groupby
-from time import localtime
 import random
+from time import localtime
 import re
 import sys
 import unittest
