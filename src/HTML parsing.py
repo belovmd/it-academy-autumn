@@ -1,3 +1,5 @@
+import xml.etree.ElementTree as etree
+
 dinner_recipe = '''<html>
 <body>
 <table>
@@ -10,8 +12,6 @@ dinner_recipe = '''<html>
 </body>
 </html>
 '''
-
-import xml.etree.ElementTree as etree
 
 tree = etree.fromstring(dinner_recipe)
 
