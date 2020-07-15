@@ -15,4 +15,3 @@ class BankAccount(object):
 my_account = BankAccount(15)
 my_account.withdraw(50)
 print(my_account.balance, my_account.overdrawn())
-
