@@ -1,5 +1,5 @@
-first_container = 0
-second_container = 1
+a = 0
+b = 1
 input_variable = int(input("Введите n: "))
 
 if input_variable < 0:
@@ -10,5 +10,5 @@ elif input_variable < 1:
     quit()
 
 for i in range(input_variable):
-    first_container, second_container = second_container, (first_container + second_container)
-    print(first_container)
+    a, b = b, (a + b)
+    print(a)
