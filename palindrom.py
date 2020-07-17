@@ -7,4 +7,3 @@ while num > 0:
     num2 = (num2 * 10) + digit
 if not num2 - number:
     print('палиндром')
-    
