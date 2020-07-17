@@ -4,4 +4,3 @@ for number in range(2, var // 2 + 1):
         break
 else:
     print('простое')
-    
