@@ -6,4 +6,5 @@ while num > 0:
     num = num // 10
     num2 = (num2 * 10) + digit
 if not num2 - number:
-    print ('палиндром')
+    print('палиндром')
+    
