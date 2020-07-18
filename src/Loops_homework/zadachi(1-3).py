@@ -2,6 +2,7 @@
 n = int(input("Введите кол-во n чисeл - "))
 for el in range(n):
     print(el * el * el)
+
 # Проверка числа на простоту
 num = int(input("Введите число которое необходимо проверить на простоту - "))
 if num == 1:
@@ -21,12 +22,13 @@ else:
 num = int(input("Введите число которое вы хотите проверить - "))
 num_copy = num
 check_sum = 0
-while not int(num_copy % 10) > 0:
-    check_sum = check_sum * 10 + int(num_copy % 10)
+last_dig = int(num_copy % 10)
+while not last_dig > 0:
+    check_sum = check_sum * 10 + last_dig
     num_copy = int(num_copy) / 10
     print('num_copy - ' + (str(num_copy)))
     print('check_sum - ' + (str(check_sum)))
 if check_sum == num:
     print('Палиндром')
 else:
-    print('Не палиндром');
+    print('Не палиндром')
