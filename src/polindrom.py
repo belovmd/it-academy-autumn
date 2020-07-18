@@ -7,6 +7,7 @@ while 1:
     if var == 100:
         print('not')
 
+
     if var == 1000:
         print('not')
 
@@ -32,4 +33,3 @@ while 1:
               else:
                print('not')
 
-               
