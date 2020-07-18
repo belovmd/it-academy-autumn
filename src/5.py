@@ -1,7 +1,2 @@
-def greet(name):
-    print('Hello', name)
+import this
 
-
-greet('Jack')
-greet('Jill')
-greet('Bob')
