@@ -16,13 +16,11 @@ def fibonacci(n):
     num = 2
     while num < n:
         num += 1
-        temp = next
-        next += first
-        first = temp
+        first, next = next, first + next
     return next  # write return value here
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    n = 2
+    n = 5
     print(fibonacci(n))
