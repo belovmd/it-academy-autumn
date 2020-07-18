@@ -14,10 +14,14 @@ def sub_string(str_):
     """
 
     # write your code here
-    return ''  # write return value here
+    ans = ''
+    for char in str_.replace(" ", ""):
+        if not char in ans:
+            ans += char
+    return ans  # write return value here
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    str_ = ''
+    str_ = './//.../.,,,,'
     print(sub_string(str_))
