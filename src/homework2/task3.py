@@ -16,7 +16,7 @@ def sub_string(str_):
     # write your code here
     ans = ''
     for char in str_.replace(" ", ""):
-        if not char in ans:
+        if char not in ans:
             ans += char
     return ans  # write return value here
 
