@@ -14,6 +14,14 @@ def count_letters(str_):
     # write your code here
     low_number = 0
     up_number = 0
+
+    for symbol in str_:
+        if symbol.isalpha():
+            if symbol.isupper():
+                up_number += 1
+            else:
+                low_number += 1
+
     return (low_number, up_number)  # write return value here
 
 

@@ -14,8 +14,29 @@ def longest_word(str_):
         в случае если
     """
 
+    words_list = []
+    word_str = ''
+
+    for symbol in str_:
+        if symbol.isalpha():
+            word_str += symbol
+        elif len(word_str) != 0:
+            words_list.append(word_str)
+            word_str = ''
+
+    if word_str:
+        words_list.append(word_str)
+
+    max_length = 0
+    max_word = ''
+    for word in words_list:
+        word_length = len(word)
+        if word_length > max_length:
+            max_length = word_length
+            max_word = word
+
     # write your code here
-    return ''  # write return value here
+    return max_word  # write return value here
 
 
 if __name__ == '__main__':

@@ -15,7 +15,15 @@ def total_sum(m, n, s):
         'x rubles y kopecks'
     """
     # write your code here
-    return ''  # write return value here
+
+    rub_count = m * s
+    cents_count = n * s
+
+    cents_to_rub = cents_count // 100
+
+    result_cents = cents_count % 100
+    result_rub = rub_count + cents_to_rub
+    return '%d rubles %d kopecks' % (result_rub, result_cents)   # write return value here
 
 
 if __name__ == '__main__':

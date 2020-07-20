@@ -11,7 +11,15 @@ def fibonacci(n):
     """
 
     # write your code here
-    return ''  # write return value here
+
+    previous_result = 1
+    result = 1
+    for number in range(1, n - 1):
+        temp = result
+        result = result + previous_result
+        previous_result = temp
+
+    return result  # write return value here
 
 
 if __name__ == '__main__':
