@@ -14,7 +14,14 @@ def sub_string(str_):
     """
 
     # write your code here
-    return ''  # write return value here
+    string_ = input("Введите строку ")
+    new_str = ''.join(string_.split())
+    list_ = []
+    for elem in new_str:
+        if elem not in list_:
+            list_.append(elem)
+            result = ''.join(list_)
+    return 'Получившееся выражение: ' + result
 
 
 if __name__ == '__main__':

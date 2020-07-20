@@ -12,9 +12,16 @@ def count_letters(str_):
     """
 
     # write your code here
+    text = input("Введите текст: ")
     low_number = 0
-    up_number = 0
-    return (low_number, up_number)  # write return value here
+    up_number = 0   
+    for elem in text:
+        if elem.isalpha():
+            if 'a' <= elem <= 'z':
+                low_number += 1
+            elif 'A' <= elem <= 'Z':
+                up_number += 1
+    return (low_number, up_number)
 
 
 if __name__ == '__main__':

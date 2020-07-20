@@ -12,8 +12,20 @@ def palindrom(n):
     :return: Bool. True или False. Является ли число палиндромом.
     """
 
-    # write your code here
-    return ''  # write return value here
+    try:
+        number = int(input('Введите число: '))
+        new_number = number
+        variable = 0
+        while number > 0:
+            digit = number % 10
+            number //= 10
+            variable = variable * 10 + digit
+        if new_number == variable:
+            return True
+        else:
+            return False
+    except ValueError:
+        return 'Вы ввели не число'
 
 
 if __name__ == '__main__':

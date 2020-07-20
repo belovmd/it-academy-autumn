@@ -10,8 +10,15 @@ def fibonacci(n):
     :return: Число. n-ое число Фибоначчи
     """
 
-    # write your code here
-    return ''  # write return value here
+    try:
+        fib1 = 1
+        fib2 = 1
+        n = int(input("Введите число: "))
+        for elem in range(2, n):
+            fib1, fib2 = fib2, fib1 + fib2
+        return fib2
+    except ValueError:
+        return 'Вы ввели не число! '
 
 
 if __name__ == '__main__':
