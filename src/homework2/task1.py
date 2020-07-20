@@ -16,17 +16,17 @@ def total_sum(m, n, s):
     """
     # write your code here
 
-    rub_count = m * s
-    cents_count = n * s
+    rubs = m * s
+    cents = n * s
 
-    cents_to_rub = cents_count // 100
+    rubs_in_cents = cents // 100
 
-    result_cents = cents_count % 100
-    result_rub = rub_count + cents_to_rub
-    return '%d rubles %d kopecks' % (result_rub, result_cents)   # write return value here
+    result_cents = cents % 100
+    result_rub = rubs + rubs_in_cents
+    return '%d rubles %d kopecks' % (result_rub, result_cents)
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    m, n, s = '', '', ''
+    m, n, s = 12, 12, 0
     print(total_sum(m, n, s))

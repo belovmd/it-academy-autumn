@@ -16,7 +16,7 @@ def sub_string(str_):
     # write your code here
     result_string = ''
     for symbol in str_:
-        if symbol not in result_string:
+        if symbol not in result_string and symbol.isalpha():
             result_string += symbol
 
     return result_string  # write return value here
