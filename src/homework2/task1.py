@@ -22,7 +22,8 @@ def total_sum(m, n, s):
         rubles_total = rubles * goods
         kopecks_total = kopecks * goods
 
-        return 'Общая цена товара составляет {0} рублей и {1} копеек за {2} товара'.\
+        return 'Общая цена товара составляет {0} рублей' \
+               ' и {1} копеек за {2} товара'.\
             format(rubles_total, kopecks_total, goods)
     except ValueError:
         return 'Вы ввели не число!'

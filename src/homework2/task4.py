@@ -14,7 +14,7 @@ def count_letters(str_):
     # write your code here
     text = input("Введите текст: ")
     low_number = 0
-    up_number = 0   
+    up_number = 0
     for elem in text:
         if elem.isalpha():
             if 'a' <= elem <= 'z':
