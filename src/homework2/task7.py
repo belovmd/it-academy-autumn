@@ -30,3 +30,18 @@
 # def accum(s):
 #     return '-'.join([char.upper() + char.lower() * i for i, char in enumerate(s)])
 
+# # 3 https://www.codewars.com/kata/54da5a58ea159efa38000836
+# def find_it(seq):
+#     for i in set(seq):
+#         if seq.count(i) % 2:
+#             return i
+
+# # 4 https://www.codewars.com/kata/514b92a657cdc65150000006
+# def solution(number):
+#     return sum([i for i in range(number) if not i % 3 or not i % 5])
+
+
+
+if __name__ == '__main__':
+
+    print(solution(10))
