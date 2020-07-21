@@ -13,18 +13,17 @@ def longest_word(str_):
         несколько, самое левое в строке).
         в случае если
     """
-    text = "(hello, world. and everybody!)"
-    var = text.maketrans(".,?:;!'()", "         ")
-    text_new = text.translate(var)
+
+    var = str_.maketrans("!#$%&'()*+,-./:;<=>?@[\\]^_`{|}~\"", "                                ")
+    text_new = str_.translate(var)
     symbol = ""
-    if text != "":
+    if str_ != "":
         for word in text_new.split():
-            # print(word, len(word))
             if len(word) > len(symbol):
                 symbol = word
-        return "longest word is: " + symbol
+        return symbol
     else:
-        return ("You entered the empty string")
+        return ''
 
 
 if __name__ == '__main__':

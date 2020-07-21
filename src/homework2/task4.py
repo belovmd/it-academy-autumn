@@ -12,10 +12,10 @@ def count_letters(str_):
     """
 
     # write your code here
-    text = "aaaaaAAAAA123456bbbbB"
+
     low_number = 0
     up_number = 0
-    for elem in text:
+    for elem in str_:
         if elem.isalpha():
             if 'a' <= elem <= 'z':
                 low_number += 1

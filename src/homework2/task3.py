@@ -14,14 +14,17 @@ def sub_string(str_):
     """
 
     # write your code here
-    string_ = "abcd bcd bdef ef"
-    new_str = ''.join(string_.split())
+
+    new_str = ''.join(str_.split())
     list_ = []
-    for elem in new_str:
-        if elem not in list_:
-            list_.append(elem)
-            result = ''.join(list_)
-    return 'Получившееся выражение: ' + result
+    if str_ != '' and not str_.isspace():
+        for elem in new_str:
+            if elem not in list_:
+                list_.append(elem)
+                result = ''.join(list_)
+        return result
+    else:
+        return ""
 
 
 if __name__ == '__main__':

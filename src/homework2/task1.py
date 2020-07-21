@@ -15,18 +15,18 @@ def total_sum(m, n, s):
         'x rubles y kopecks'
     """
     # write your code here
-    try:
-        rubles = 21
-        kopecks = 23
-        goods = 3
-        rubles_total = rubles * goods
-        kopecks_total = kopecks * goods
 
-        return 'Общая цена товара составляет {0} рублей' \
-               ' и {1} копеек за {2} товара'.\
-            format(rubles_total, kopecks_total, goods)
-    except ValueError:
-        return 'Вы ввели не число!'
+    rubles = m
+    kopecks = n
+    rubles_total = rubles * s
+    kopecks_total = kopecks * s
+    if 100 <= kopecks_total < 1000000:
+        kopecks_rez = kopecks_total % 100
+        rubles_total = rubles_total + kopecks_total // 100
+    elif kopecks_total < 100:
+        kopecks_rez = kopecks_total
+    return '{0} rubles {1} kopecks'. \
+        format(rubles_total, kopecks_rez)
 
 
 if __name__ == '__main__':

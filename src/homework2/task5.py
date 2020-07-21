@@ -10,15 +10,11 @@ def fibonacci(n):
     :return: Число. n-ое число Фибоначчи
     """
 
-    try:
-        fib1 = 1
-        fib2 = 1
-        n = 10
-        for elem in range(2, n):
-            fib1, fib2 = fib2, fib1 + fib2
-        return fib2
-    except ValueError:
-        return 'Вы ввели не число! '
+    fib1 = 1
+    fib2 = 1
+    for elem in range(2, n):
+        fib1, fib2 = fib2, fib1 + fib2
+    return fib2
 
 
 if __name__ == '__main__':
