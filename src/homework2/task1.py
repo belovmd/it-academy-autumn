@@ -19,11 +19,9 @@ def total_sum(m, n, s):
     rubs = m * s
     cents = n * s
 
-    rubs_in_cents = cents // 100
-
-    result_cents = cents % 100
-    result_rub = rubs + rubs_in_cents
-    return '%d rubles %d kopecks' % (result_rub, result_cents)
+    rubs += cents // 100
+    cents = cents % 100
+    return '%d rubles %d kopecks' % (rubs, cents)
 
 
 if __name__ == '__main__':

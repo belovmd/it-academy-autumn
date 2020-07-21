@@ -20,10 +20,7 @@ def palindrom(n):
         result_number = result_number * 10 + (temp % 10)
         temp //= 10
 
-    if n != result_number:
-        return False
-    else:
-        return True
+    return n == result_number
 
 
 if __name__ == '__main__':
