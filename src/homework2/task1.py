@@ -16,9 +16,9 @@ def total_sum(m, n, s):
     """
     # write your code here
     try:
-        rubles = int(input('рубли '))
-        kopecks = int(input('копейки '))
-        goods = int(input('количество товара '))
+        rubles = 21
+        kopecks = 23
+        goods = 3
         rubles_total = rubles * goods
         kopecks_total = kopecks * goods
 

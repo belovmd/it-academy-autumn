@@ -31,7 +31,7 @@
 #  соответственно.
 # """
 try:
-    a, b = map(int, input('Введите два числа: ').split())
+    a, b = 4, 7
     sum = a + b - 1
     if sum <= 10:
         print(sum - a, sum - b)
@@ -57,7 +57,7 @@ except ValueError:
 #  билет с номером N счастливый и «NO» в
 # противном случае.
 # """
-number = int(input('Введите шеcтизначное число: '))
+number = 582681
 d1 = number % 10
 d2 = number // 10 % 10
 d3 = number // 100 % 10
@@ -73,9 +73,9 @@ else:
 # Даны три целых числа, записанных в отдельных строках.
 #  Определите, сколько среди них совпадающих.
 # """
-a = int(input())
-b = int(input())
-c = int(input())
+a = 1
+b = 1
+c = 2
 if a == b and b == c:
     print(3)
 elif a == b or a == c:
@@ -127,7 +127,7 @@ else:
 #  целых числа через пробел — количество быков
 #  и коров.
 # """
-num1, num2 = map(int, input().split())
+num1, num2 = 1234, 2149
 str_num1 = str(num1)
 str_num2 = str(num2)
 count_bull = 0
@@ -162,7 +162,8 @@ print(count_bull, count_cow)
 #  если анаграмма подобрана правильно,
 #  иначе выведите «NO».
 # """
-str_1, str_2 = map(str, input().split())
+str_1 = "stop"
+str_2 = "tops"
 count = 0
 for i in range(len(str_1)):
     if str_1[i] != str_2[i]:

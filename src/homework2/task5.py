@@ -13,7 +13,7 @@ def fibonacci(n):
     try:
         fib1 = 1
         fib2 = 1
-        n = int(input("Введите число: "))
+        n = 10
         for elem in range(2, n):
             fib1, fib2 = fib2, fib1 + fib2
         return fib2

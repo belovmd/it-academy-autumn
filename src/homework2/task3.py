@@ -14,7 +14,7 @@ def sub_string(str_):
     """
 
     # write your code here
-    string_ = input("Введите строку ")
+    string_ = "abcd bcd bdef ef"
     new_str = ''.join(string_.split())
     list_ = []
     for elem in new_str:

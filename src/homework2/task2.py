@@ -13,7 +13,7 @@ def longest_word(str_):
         несколько, самое левое в строке).
         в случае если
     """
-    text = input("Enter a few words: ")
+    text = "(hello, world. and everybody!)"
     var = text.maketrans(".,?:;!'()", "         ")
     text_new = text.translate(var)
     symbol = ""

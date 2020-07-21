@@ -13,7 +13,7 @@ def palindrom(n):
     """
 
     try:
-        number = int(input('Введите число: '))
+        number = 543212345
         new_number = number
         variable = 0
         while number > 0:

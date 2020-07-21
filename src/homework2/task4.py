@@ -12,7 +12,7 @@ def count_letters(str_):
     """
 
     # write your code here
-    text = input("Введите текст: ")
+    text = "aaaaaAAAAA123456bbbbB"
     low_number = 0
     up_number = 0
     for elem in text:
