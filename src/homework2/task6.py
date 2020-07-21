@@ -15,7 +15,6 @@ def palindrom(n):
     # write your code here
     reverse = 0
     number = n
-    
     while number > 0:
         reverse *= 10
         reverse += number % 10

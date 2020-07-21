@@ -20,7 +20,8 @@ def total_sum(m, n, s):
     rubles += kopecks // 100
     kopecks %= 100
 
-    return '{0} rubles {1} kopecks'.format(rubles, kopecks)  # write return value here
+    # write return value here
+    return '{0} rubles {1} kopecks'.format(rubles, kopecks)
 
 
 if __name__ == '__main__':
