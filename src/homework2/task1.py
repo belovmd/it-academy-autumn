@@ -18,7 +18,7 @@ def total_sum(m, n, s):
     m = str(m) + ' rubles'
     n = (n * s) % 100
     n = str(n) + ' kopecks'
-    s = str(s)+ ' goods'
+
     return m, n, s   # write return value here
 
 
@@ -28,6 +28,6 @@ if __name__ == '__main__':
     m = int(input('Введите сумму в рублях:'))
     n = int(input('Введите сумму в копейках:'))
     s = int(input('Введите количество товаров:'))
-    print(total_sum(m, n, s)) #
+    print(total_sum(m, n, s)) 
 
 
