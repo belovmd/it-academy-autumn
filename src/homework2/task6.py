@@ -13,7 +13,15 @@ def palindrom(n):
     """
 
     # write your code here
-    return ''  # write return value here
+    reverse = 0
+    number = n
+    
+    while number > 0:
+        reverse *= 10
+        reverse += number % 10
+        number //= 10
+
+    return reverse == n  # write return value here
 
 
 if __name__ == '__main__':

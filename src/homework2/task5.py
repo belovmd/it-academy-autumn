@@ -11,7 +11,17 @@ def fibonacci(n):
     """
 
     # write your code here
-    return ''  # write return value here
+    if n == 1:
+        return 1
+
+    if n == 2:
+        return 1
+
+    previous, current = (1, 1)
+    for i in range(2, n):
+        previous, current = (current, previous + current)
+
+    return current  # write return value here
 
 
 if __name__ == '__main__':
