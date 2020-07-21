@@ -14,7 +14,8 @@ def longest_word(str_):
         в случае если
     """
 
-    var = str_.maketrans("!#$%&'()*+,-./:;<=>?@[\\]^_`{|}~\"", "                                ")
+    var = str_.maketrans("!#$%&'()*+,-./:;<=>?@[\\]^_`{|}~\"",
+                         "                                ")
     text_new = str_.translate(var)
     symbol = ""
     if str_ != "":
