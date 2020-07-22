@@ -1,9 +1,5 @@
 # 1 https://www.codewars.com/kata/53d40c1e2f13e331fc000c26
 def pow(matrix_a, n, identity_matrix, multiply):
-    """
-    Возвращает x в степени n. Предполагает, что I – это единичная матрица, которая
-    перемножается с mult, а n – положительное целое
-    """
     if n == 0:
         return identity_matrix
     elif n == 1:
