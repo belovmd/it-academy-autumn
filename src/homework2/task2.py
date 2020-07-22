@@ -14,10 +14,8 @@ def longest_word(str_):
         в случае если
     """
     str_ = str_.replace('_', ' ')
-    list_of_words = str_.split()
+    list_of_words = str_.split(' ')
     words_with_only_letters = []
-    if not words_with_only_letters:
-        return ''
     for word in list_of_words:
         new_word = ''
         for symb in word:
@@ -27,6 +25,8 @@ def longest_word(str_):
                 break
         words_with_only_letters.append(new_word)
     list_of_lengths = []
+    if not words_with_only_letters:
+        return ''
     for word in words_with_only_letters:
         list_of_lengths.append(len(word))
 
@@ -35,5 +35,5 @@ def longest_word(str_):
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    str_ = ''
+    str_ = '______________________________________word_wordd____wordd__'
     print(longest_word(str_))
