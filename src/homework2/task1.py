@@ -15,7 +15,10 @@ def total_sum(m, n, s):
         'x rubles y kopecks'
     """
     # write your code here
-    return ''  # write return value here
+    total = (int(m) * 100 + int(n)) * int(s)
+    x = total // 100
+    y = total % 100
+    return (str(x) + ' rubles ' + str(y) + ' kopecks') # write return value here
 
 
 if __name__ == '__main__':

@@ -14,7 +14,13 @@ def sub_string(str_):
     """
 
     # write your code here
-    return ''  # write return value here
+    y = []
+    for i in str_:
+        if i not in y:
+            y.append(i)
+    s_out = (''.join(y))
+    s_out = s_out.replace(' ', '')
+    return s_out  # write return value here
 
 
 if __name__ == '__main__':
