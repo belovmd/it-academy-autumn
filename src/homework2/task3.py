@@ -16,11 +16,9 @@ def sub_string(str_):
     for char in str_:
         if char not in clear_str and char != ' ':
             clear_str += char
-    print(clear_str)
-    return 'Введеная строка - ' + str_ + '; Очищенная строка - ' + clear_str  # write return value here
+    return clear_str
 
 
 if __name__ == '__main__':
-    # здесь можно сделать ввод из консоли и проверить работу функции
-    str_ = 'здесь можно сделать ввод .. из консоли и // проверить работу функции'
+    str_ = 'sd asdas'
     print(sub_string(str_))

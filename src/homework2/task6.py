@@ -11,8 +11,6 @@ def palindrom(n):
     :param n: Число.
     :return: Bool. True или False. Является ли число палиндромом.
     """
-    if n < 11:
-        return False
     num_copy = n
     check_sum = 0
     last_dig = 0
@@ -28,5 +26,5 @@ def palindrom(n):
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    n = 213112
+    n = 1234567890987654321
     print(palindrom(n))

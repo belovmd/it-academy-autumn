@@ -17,11 +17,9 @@ def fibonacci(n):
         next = previous + current
         previous = current
         current = next
-    # write your code here
-    return 'n-ое число ряда Фибоначчи - ' + str(current)  # write return value here
+    return current
 
 
 if __name__ == '__main__':
-    # здесь можно сделать ввод из консоли и проверить работу функции
     n = 8
     print(fibonacci(n))
