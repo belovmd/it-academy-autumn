@@ -3,7 +3,7 @@ def total_sum(m, n, s):
     ruble_amount = sum // 100
     kopeck_amount = sum % 100
 
-    return f"{ruble_amount} rubles {kopeck_amount} kopeks"
+    return f"{ruble_amount} rubles {kopeck_amount} kopecks"
 
 
 if __name__ == "__main__":

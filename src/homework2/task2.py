@@ -2,7 +2,7 @@ import re
 
 
 def longest_word(str_):
-    current_longest = " "
+    current_longest = ""
     temp_storage = re.findall(r"\w+", str_)
     for word in temp_storage:
         if len(word) > len(current_longest):
