@@ -12,5 +12,5 @@ def longest_word(str_):
 
 if __name__ == "__main__":
     # здесь можно сделать ввод из консоли и проверить работу функции
-    str_ = """ !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ """
+    str_ = "fatal: you must specify path(s) to restore"
     print(longest_word(str_))
