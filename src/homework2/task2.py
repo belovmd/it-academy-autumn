@@ -5,6 +5,8 @@
 """
 
 from string import punctuation
+
+
 def longest_word(str_):
     """Поиск самого длинного слова в предложении.
 
