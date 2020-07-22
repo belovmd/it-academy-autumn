@@ -22,7 +22,7 @@ def total_sum(m, n, s):
     x = m * s
     y = str(n * s)
     rub = 0
-    str_rub = ''
+    str_rub = '0'
     while len(y) > 2:
         str_rub += y[rub]
         y = y[:rub] + y[rub + 1:]
