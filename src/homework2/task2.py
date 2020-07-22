@@ -13,7 +13,7 @@ def longest_word(str_):
         несколько, самое левое в строке).
         в случае если
     """
-
+    str_ = str_.replace('_', ' ')
     list_of_words = str_.split()
     words_with_only_letters = []
     if not words_with_only_letters:
