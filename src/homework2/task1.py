@@ -14,8 +14,9 @@ def total_sum(m, n, s):
     :return: строка. общая цена в рублях и копейках. формат:
         'x rubles y kopecks'
     """
-    # write your code here
-    return ''  # write return value here
+    genM = m * s
+    genN = n * s
+    return ''genM, "rubles", genN, "kopecks"''  # write return value here
 
 
 if __name__ == '__main__':
