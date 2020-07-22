@@ -1,24 +1,12 @@
-"""Напишите программу, которая считает общую цену.
-
-   Вводится M рублей и N копеек цена, а также количество S товара Посчитайте
-   общую цену в рублях и копейках за L товаров.
-"""
-
-
 def total_sum(m, n, s):
-    """Подсчет общей суммы покупок.
+    sum = (int(m) * 100 + int(n)) * int(s)
+    ruble_amount = sum // 100
+    kopeck_amount = sum % 100
 
-    :param m: рубли
-    :param n: копейки
-    :param s: количество товара
-    :return: строка. общая цена в рублях и копейках. формат:
-        'x rubles y kopecks'
-    """
-    # write your code here
-    return ''  # write return value here
+    return f"{ruble_amount} rubles {kopeck_amount} kopecks"
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # здесь можно сделать ввод из консоли и проверить работу функции
-    m, n, s = '', '', ''
+    m, n, s = "0", "5", "5"
     print(total_sum(m, n, s))

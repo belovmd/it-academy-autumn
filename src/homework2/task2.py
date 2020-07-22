@@ -1,24 +1,16 @@
-"""Найти самое длинное слово в введенном предложении.
-
-    В случае если их несколько, самое левое в строке Учтите что в предложении
-    есть знаки препинания.
-"""
+import re
 
 
 def longest_word(str_):
-    """Поиск самого длинного слова в предложении.
-
-    :param str_: входная строка
-    :return: строка. Самое длинное слово в предложении (в случае если их
-        несколько, самое левое в строке).
-        в случае если
-    """
-
-    # write your code here
-    return ''  # write return value here
+    current_longest = ""
+    temp_storage = re.findall(r"[a-zA-Z]+", str_)
+    for word in temp_storage:
+        if len(word) > len(current_longest):
+            current_longest = word
+    return current_longest
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # здесь можно сделать ввод из консоли и проверить работу функции
-    str_ = ''
+    str_ = "fatal: you must specify path(s) to restore"
     print(longest_word(str_))
