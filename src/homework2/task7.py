@@ -1,14 +1,14 @@
 # 1 https://www.codewars.com/kata/53d40c1e2f13e331fc000c26
-def pow(matrix_a, n, identity_matrix, multiply):
+def pow(matrix_a, n, identity_matrix, mult):
     if n == 0:
         return identity_matrix
     elif n == 1:
         return matrix_a
     elif n % 2:
-        return multiply(pow(matrix_a, n - 1, identity_matrix, multiply), matrix_a)
+        return mult(pow(matrix_a, n - 1, identity_matrix, mult), matrix_a)
     else:
-        matrix_b = pow(matrix_a, n // 2, identity_matrix, multiply)
-        return multiply(matrix_b, matrix_b)
+        matrix_b = pow(matrix_a, n // 2, identity_matrix, mult)
+        return mult(matrix_b, matrix_b)
 
 
 def matrix_multiply(matrix_a, matrix_b):
@@ -27,7 +27,7 @@ def fib(n):
 
 # 2 https://www.codewars.com/kata/5667e8f4e3f572a8f2000039
 def accum(s):
-    return '-'.join([char.upper() + char.lower() * i for i, char in enumerate(s)])
+    return '-'.join([c.upper() + c.lower() * i for i, c in enumerate(s)])
 
 
 # 3 https://www.codewars.com/kata/54da5a58ea159efa38000836
