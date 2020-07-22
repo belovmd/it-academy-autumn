@@ -9,12 +9,19 @@ def fibonacci(n):
     :param n: Номер числа Фибоначчи.
     :return: Число. n-ое число Фибоначчи
     """
-
+    i = 0
+    previous = 1
+    current = 1
+    while i < n - 2:
+        i = i + 1
+        next = previous + current
+        previous = current
+        current = next
     # write your code here
-    return ''  # write return value here
+    return 'n-ое число ряда Фибоначчи - ' + str(current)  # write return value here
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    n = 0
+    n = 8
     print(fibonacci(n))

@@ -13,12 +13,17 @@ def longest_word(str_):
         несколько, самое левое в строке).
         в случае если
     """
-
-    # write your code here
-    return ''  # write return value here
+    import re
+    str_ = re.sub(r'[^\w\s]', '', str_)
+    str_ = str_.split(' ')
+    spis = []
+    for slovo in str_:
+        spis.append(len(slovo))
+    return 'Первое самое длинное слово это: ' + str_[spis.index(max(spis))]
+    # return 'Первое самое длинное слово это: ' + str_[number]  # write return value here
 
 
 if __name__ == '__main__':
-    # здесь можно сделать ввод из консоли и проверить работу функции
-    str_ = ''
+    #  здесь можно сделать ввод из консоли и проверить работу функции
+    str_ = '123456789;; здесь, можно сделать. ввод ,из консоли и проверить.//../ работу функции'
     print(longest_word(str_))

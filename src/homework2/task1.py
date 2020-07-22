@@ -13,12 +13,25 @@ def total_sum(m, n, s):
     :param s: количество товара
     :return: строка. общая цена в рублях и копейках. формат:
         'x rubles y kopecks'
+
     """
-    # write your code here
-    return ''  # write return value here
+    m = abs(int(m))
+    n = abs(int(n))
+    s = abs(int(s))
+    x = m * s
+    y = str(n * s)
+    rub = 0
+    str_rub = ''
+    while len(y) > 2:
+        str_rub += y[rub]
+        y = y[:rub] + y[rub + 1:]
+        rub += 1
+    if rub:
+        x = x + int(str_rub)
+    return 'Сумма = ' + str(x) + ' рублей ' + y + ' копеек'  # write return value here
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    m, n, s = '', '', ''
+    m, n, s = '12', '23', '11'
     print(total_sum(m, n, s))
