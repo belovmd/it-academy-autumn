@@ -14,8 +14,21 @@ def longest_word(str_):
         в случае если
     """
 
-    # write your code here
-    return ''  # write return value here
+    list_of_words = str_.split()
+    words_with_only_letters = []
+    for word in list_of_words:
+        new_word = ''
+        for symb in word:
+            if symb.isalpha():
+                new_word += symb
+            else:
+                break
+        words_with_only_letters.append(new_word)
+    list_of_lengths = []
+    for word in words_with_only_letters:
+        list_of_lengths.append(len(word))
+
+    return words_with_only_letters[list_of_lengths.index(max(list_of_lengths))]
 
 
 if __name__ == '__main__':

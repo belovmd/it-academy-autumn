@@ -14,8 +14,9 @@ def total_sum(m, n, s):
     :return: строка. общая цена в рублях и копейках. формат:
         'x rubles y kopecks'
     """
-    # write your code here
-    return ''  # write return value here
+    full_price = (int(m) * 100 + int(n)) * int(s)
+
+    return f'{full_price // 100} rubles {full_price % 100} kopecks'
 
 
 if __name__ == '__main__':

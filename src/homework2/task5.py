@@ -9,9 +9,15 @@ def fibonacci(n):
     :param n: Номер числа Фибоначчи.
     :return: Число. n-ое число Фибоначчи
     """
+    if n < 3:
+        return 1
+    f1, f2 = 1, 1
+    i = 2
+    while i < n:
+        f1, f2 = f2, f1 + f2
+        i += 1
 
-    # write your code here
-    return ''  # write return value here
+    return f2  # write return value here
 
 
 if __name__ == '__main__':

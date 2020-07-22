@@ -13,8 +13,15 @@ def sub_string(str_):
     :return: строка. Получившееся выражение
     """
 
-    # write your code here
-    return ''  # write return value here
+    str_ = str_.replace(' ', '')
+    set_of_symbols = set()
+    res = ''
+    for symb in str_:
+        if symb not in set_of_symbols:
+            res += symb
+            set_of_symbols.add(symb)
+
+    return res
 
 
 if __name__ == '__main__':

@@ -1,3 +1,5 @@
+import math
+
 """Определите, является ли число палиндромом (читается слева направо и справа
     налево одинаково).  Число положительное целое, произвольной длины. Задача
     требует работать только с числами (без конвертации числа в строку или
@@ -11,12 +13,20 @@ def palindrom(n):
     :param n: Число.
     :return: Bool. True или False. Является ли число палиндромом.
     """
+    if n < 10:
+        return True
+    while n >= 10:
+        order = int(math.log10(n))
+        first = n // 10 ** order
+        last = n % 10
+        if first != last:
+            return False
+        n = n % 10 ** order // 10
 
-    # write your code here
-    return ''  # write return value here
+    return True
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    n = 0
+    n = 1567651
     print(palindrom(n))
