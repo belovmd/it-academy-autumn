@@ -16,6 +16,8 @@ def longest_word(str_):
 
     list_of_words = str_.split()
     words_with_only_letters = []
+    if not words_with_only_letters:
+        return ''
     for word in list_of_words:
         new_word = ''
         for symb in word:

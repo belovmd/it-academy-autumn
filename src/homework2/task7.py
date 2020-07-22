@@ -13,7 +13,7 @@ def num_primorial(n):
     primes = [2, 3, 5, 7, 11, 13, 17, 19, 23]
     res = 1
     k = primes[-1] + 2
-    while len(primes)<n:
+    while len(primes) < n:
         for prime in primes:
             if k % prime == 0:
                 k += 2
