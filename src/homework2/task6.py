@@ -2,7 +2,7 @@ def palindrom(n):
 
     divisor = 10
     digits = 1
-    is_palindrome = False
+    is_palindrome = True
 
     while n // divisor:
         digits += 1
@@ -13,13 +13,11 @@ def palindrom(n):
         last_digit = (n % 10 ** i) // 10 ** (i - 1)
         if first_digit != last_digit:
             is_palindrome = False
-        else:
-            is_palindrome = True
 
-    return is_palindrome  # write return value here
+    return is_palindrome
 
 
 if __name__ == "__main__":
     # здесь можно сделать ввод из консоли и проверить работу функции
-    n = 2311323
+    n = 0
     print(palindrom(n))

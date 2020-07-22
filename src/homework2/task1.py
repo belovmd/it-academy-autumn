@@ -1,9 +1,9 @@
 def total_sum(m, n, s):
     sum = (int(m) * 100 + int(n)) * int(s)
     ruble_amount = sum // 100
-    kopek_amount = sum % 100
+    kopeck_amount = sum % 100
 
-    return f"{ruble_amount} rubles {kopek_amount} kopeks"
+    return f"{ruble_amount} rubles {kopeck_amount} kopeks"
 
 
 if __name__ == "__main__":
