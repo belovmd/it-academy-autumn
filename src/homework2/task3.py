@@ -14,6 +14,12 @@ def sub_string(str_):
     """
 
     # write your code here
+    dbl_string = str_[0]
+    for i in range(len(string)):
+        if string[i] == " " or string[i] in dbl_string:
+            continue
+        elif:
+            dbl_string += string[i]
     return ''  # write return value here
 
 

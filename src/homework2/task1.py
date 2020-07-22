@@ -16,10 +16,13 @@ def total_sum(m, n, s):
     """
     genM = m * s
     genN = n * s
-    return ''genM, "rubles", genN, "kopecks"''  # write return value here
+    if genN > 99:
+        genM += genN // 100
+        genN = genN % 100
+    return 'genM, "rubles", genN, "kopecks"'  # write return value here
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    m, n, s = '', '', ''
+    m, n, s =
     print(total_sum(m, n, s))
