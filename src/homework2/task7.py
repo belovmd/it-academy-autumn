@@ -51,3 +51,40 @@ array = [[1, 2, 3],
 
 
 print(snail(array))
+
+"""
+https://www.codewars.com/kata/5a99a03e4a6b34bb3c000124/train/python
+Definition (Primorial Of a Number)
+Is similar to factorial of a number, In primorial,
+not all the natural numbers get multiplied, only prime numbers are
+multiplied to calculate the primorial of a number.
+It's denoted with P# and it is the product
+of the first n prime numbers.
+
+numPrimorial (3) ==> return (30)
+numPrimorial (5) ==> return (2310)
+numPrimorial (6) ==> return (30030)
+"""
+
+
+def is_prime(curr_num):
+    for num in range(2, curr_num // 2 + 1):
+        if curr_num % num == 0:
+            return False
+    return True
+
+
+def num_primorial(n):
+    result = 2
+    next_prime = 3
+    count = 1
+    while count != n:
+        if is_prime(next_prime):
+            count += 1
+            result *= next_prime
+        next_prime += 1
+
+    return result
+
+
+print(num_primorial(6))
