@@ -17,12 +17,12 @@ def count_letters(str_):
 
     upper_list = 'QWERTYUIOPLKJHGFDSAZXCVBNM'
     lower_list = 'qwertyuioplkjhgfdsazxcvbnm'
-    for i in range(len(string)):
-        if string[i] in upper_list:
+    for i in range(len(str_)):
+        if str_[i] in upper_list:
             up_number += 1
-        if string[i] in lower_list:
+        if str_[i] in lower_list:
             low_number += 1
-    return (low_number, up_number)  # write return value here
+    return ('low -', low_number, ', ', 'up -', up_number)  # write return value here
 
 
 if __name__ == '__main__':
