@@ -12,15 +12,13 @@ def fibonacci(n):
 
     # write your code here
     a, b = 0, 1
-    fib = []
     for nums in range(n):
         dig = a + b
-        fib.append(dig)
         a, b = b, (a + b)
-    return 'fib'  # write return value here
+    return (dig)  # write return value here
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    n = 10
+    n =
     print(fibonacci(n))
