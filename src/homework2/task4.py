@@ -14,7 +14,6 @@ def count_letters(str_):
     # write your code here
     low_number = 0
     up_number = 0
-
     upper_list = 'QWERTYUIOPLKJHGFDSAZXCVBNM'
     lower_list = 'qwertyuioplkjhgfdsazxcvbnm'
     for i in range(len(str_)):
@@ -23,7 +22,7 @@ def count_letters(str_):
         if str_[i] in lower_list:
             low_number += 1
     low_number, up_number = (str(low_number)), (str(up_number))
-    return ('low_number - ' + low_number + '\nup_number - ' + up_number) 
+    return ('low_number - ' + low_number + '\nup_number - ' + up_number)
 # write return value here
 
 
