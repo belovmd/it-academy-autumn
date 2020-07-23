@@ -14,7 +14,7 @@ def fibonacci(n):
     a, b = 0, 1
     for nums in range(n):
         dig = a + b
-        a, b = b,(a + b)
+        a, b = b, (a + b)
     return(dig)  # write return value here
 
 
