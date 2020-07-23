@@ -19,10 +19,10 @@ def total_sum(m, n, s):
     if genN > 99:
         genM += genN // 100
         genN = genN % 100
-    return 'genM, "rubles", genN, "kopecks"'  # write return value here
+    return (genM, 'rubles', genN, 'kopecks')  # write return value here
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    m, n, s =
+    m, n, s =5, 60, 6
     print(total_sum(m, n, s))
