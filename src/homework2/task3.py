@@ -18,9 +18,9 @@ def sub_string(str_):
     for i in range(len(str_)):
         if str_[i] == " " or str_[i] in dbl_string:
             continue
-        elif:
-            dbl_string += string[i]
-    return ''  # write return value here
+        else:
+            dbl_string += str_[i]
+    return (dbl_string)  # write return value here
 
 
 if __name__ == '__main__':
