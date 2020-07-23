@@ -28,5 +28,5 @@ def count_letters(str_):
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    str_ = 'HFKJGghjfkFJKHD'
+    str_ = ''
     print(count_letters(str_))
