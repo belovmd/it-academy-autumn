@@ -22,10 +22,11 @@ def count_letters(str_):
             up_number += 1
         if str_[i] in lower_list:
             low_number += 1
-    return ('low -', low_number, ', ', 'up -', up_number)  # write return value here
+    low_number, up_number = (str(low_number) ), (str(up_number) )
+    return ('low_number - ' + low_number + '\nup_number - ' + up_number)  # write return value here
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    str_ = ''
+    str_ = 'HFKJGghjfkFJKHD'
     print(count_letters(str_))
