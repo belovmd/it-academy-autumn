@@ -11,7 +11,12 @@ def fibonacci(n):
     """
 
     # write your code here
-    return ''  # write return value here
+    a, b = 0, 1
+    fib = []
+    for nums in range(n):
+        fib += a + b
+        a, b = b, (a + b)
+    return 'fib'  # write return value here
 
 
 if __name__ == '__main__':
