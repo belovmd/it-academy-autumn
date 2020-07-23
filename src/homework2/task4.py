@@ -22,7 +22,7 @@ def count_letters(str_):
             up_number += 1
         if str_[i] in lower_list:
             low_number += 1
-    low_number, up_number = (str(low_number) ), (str(up_number) )
+    low_number, up_number = (str(low_number)), (str(up_number))
     return ('low_number - ' + low_number + '\nup_number - ' + up_number)  # write return value here
 
 
