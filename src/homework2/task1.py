@@ -20,10 +20,10 @@ def total_sum(m, n, s):
         genM += genN // 100
         genN = str(genN % 100)
     genM = str(genM)
-    return (genM + ' rubles ' + genN + ' kopecks')  # write return value here
+    return(genM + ' rubles ' + genN + ' kopecks')  # write return value here
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    m, n, s =
+    m, n, s = '', '', ''
     print(total_sum(m, n, s))
