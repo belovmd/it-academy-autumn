@@ -15,7 +15,6 @@ def count_letters(str_):
     low_number = 0
     up_number = 0
 
-    string = 'FJrkbhsg tGJD EGVVghpHF'
     upper_list = 'QWERTYUIOPLKJHGFDSAZXCVBNM'
     lower_list = 'qwertyuioplkjhgfdsazxcvbnm'
     for i in range(len(string)):
