@@ -14,7 +14,7 @@ def sub_string(str_):
     """
 
     # write your code here
-    dbl_string = str_[0]
+    dbl_string = ''
     for i in range(len(str_)):
         if str_[i] == " " or str_[i] in dbl_string:
             continue
