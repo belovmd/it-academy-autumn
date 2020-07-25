@@ -11,7 +11,6 @@ def longest_word(str_):
     :param str_: входная строка
     :return: строка. Самое длинное слово в предложении (в случае если их
         несколько, самое левое в строке).
-        в случае если
     """
 
     line_str = str_.split()
@@ -19,7 +18,11 @@ def longest_word(str_):
     for i in range(len(line_str)):
         new_list.append(line_str[i].strip('!@#$%^&*([)]{-}"_:;|<>,./?'))
     new_list.sort(key=len, reverse=True)
-    return (new_list[0])  # write return value here
+    if len(new_list) == 0:
+        str_ = ''
+    else:
+        str_ = new_list[0]
+    return (str_)  # write return value here
 
 
 if __name__ == '__main__':
