@@ -16,7 +16,8 @@ def longest_word(str_):
     line_str = str_.split()
     new_list = list()
     for i in range(len(line_str)):
-        new_list.append(line_str[i].strip('!@#$%^&*([)]{-}"_:;|<>,./?'))
+        p = line_str[i].strip('!@#$%^&*{}()-"_:;|\<>,./?')
+        new_list.append(p)
     new_list.sort(key=len, reverse=True)
     if len(new_list) == 0:
         str_ = ''
