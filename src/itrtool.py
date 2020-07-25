@@ -1,3 +1,8 @@
+"""
+Использование groupby для
+изменения многострочного строкового литерала.
+"""
+
 from itertools import groupby
 
 lines = '''

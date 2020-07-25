@@ -1,3 +1,8 @@
+"""
+Сумма целочесленных значений,
+переданных через консоль.
+"""
+
 import sys
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
