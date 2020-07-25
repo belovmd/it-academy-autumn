@@ -18,7 +18,7 @@ def total_sum(m, n, s):
     genN = n * s
     if genN > 99:
         genM += genN // 100
-        genN = str(genN % 100)
+    genN = str(genN % 100)
     genM = str(genM)
     return(genM + ' rubles ' + genN + ' kopecks')  # write return value here
 
