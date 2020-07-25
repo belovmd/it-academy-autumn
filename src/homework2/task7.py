@@ -65,12 +65,12 @@ def decrypt(text, n):
     if text in ("", None):
         return text
 
-    center = len(text) // 2
+    dn = len(text) // 2
 
     for i in range(n):
-        left = text[:center]
-        right = text[center:]
-        text = "".join(right[i:i + 1] + left[i:i + 1] for i in range(center + 1))
+        left = text[:dn]
+        right = text[dn:]
+        text = "".join(right[i:i + 1] + left[i:i + 1] for i in range(dn + 1))
 
     return text
 
