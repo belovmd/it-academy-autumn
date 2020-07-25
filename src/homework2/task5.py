@@ -12,7 +12,7 @@ def fibonacci(n):
 
     # write your code here
     a, b = 0, 1
-    for nums in range(n-1):
+    for nums in range(n - 1):
         dig = a + b
         a, b = b, (a + b)
     return(dig - (b - a))  # а иначе не получается сделать две 1 подряд при n = 1 и n = 2
