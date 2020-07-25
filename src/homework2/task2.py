@@ -12,7 +12,7 @@ def longest_word(str_):
     :return: строка. Самое длинное слово в предложении (в случае если их
         несколько, самое левое в строке).
     """
-    i
+    
     line_str = str_.split()
     new_list = list()
     for i in range(len(line_str)):
