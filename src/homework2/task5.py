@@ -15,7 +15,7 @@ def fibonacci(n):
     for nums in range(n):
         dig = a + b
         a, b = b, (a + b)
-    return(dig - (b - a))  
+    return (dig - (b - a))  
 
 
 if __name__ == '__main__':
