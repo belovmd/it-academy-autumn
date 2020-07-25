@@ -21,10 +21,10 @@ def palindrom(n):
         num2 = (num2 * 10) + digit
     if not num2 - n:
         True
-        return 'True'
+        return True
     else:
         False
-        return 'False'
+        return False
     return ''  # write return value here
 
 
