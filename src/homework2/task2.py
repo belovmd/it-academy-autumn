@@ -24,7 +24,7 @@ def longest_word(str_):
         str_ = ''
     else:
         str_ = new_list[0]
-    return (str_)  # write return value here
+    return str_  # write return value here
 
 
 if __name__ == '__main__':
