@@ -12,11 +12,13 @@ def longest_word(str_):
     :return: строка. Самое длинное слово в предложении (в случае если их
         несколько, самое левое в строке).
     """
+    from string import punctuation
+
     line_str = str_.split()
     new_list = list()
-    for i in range(len(line_str)):
-        p = line_str[i].split("#$%&()*+-./:;<=>?@[]^`{|}~,'")
-        new_list.append(p)
+    for word in line_str:
+        new_list.append(word.split(punctuation))
+
     new_list.sort(key=len, reverse=True)
     if len(new_list) == 0:
         str_ = ''
