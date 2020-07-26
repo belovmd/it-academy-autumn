@@ -16,15 +16,15 @@ def longest_word(str_):
 
     line_str = str_.split()
     new_list = list()
-    for word in line_str:
-        new_list.append(word.split(punctuation))
+    for words in line_str:
+        new_list.append(words.split(punctuation))
 
     new_list.sort(key=len, reverse=True)
     if len(new_list) == 0:
-        str_ = ''
+        word = ''
     else:
-        str_ = new_list[0]
-    return str_  # write return value here
+        word = new_list[0]
+    return word  # write return value here
 
 
 if __name__ == '__main__':
