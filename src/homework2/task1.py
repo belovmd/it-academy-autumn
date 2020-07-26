@@ -21,4 +21,4 @@ def total_sum(m, n, s):
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
     m, n, s = '', '', ''
-    print(total_sum(m, n, s))
+    print(total_sum(m, n, s))!!
