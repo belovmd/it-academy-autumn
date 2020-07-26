@@ -24,7 +24,7 @@ def longest_word(str_):
             clean_str_.append(word)
 
 
-    #sort
+    #сортировка
     max_word = clean_str_[0]
     print(max_word)
     for word in clean_str_:
@@ -43,4 +43,4 @@ if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
     str_ = ''
     str_ = input('Введите предложение:')
-    print(longest_word(str_))
+    print(longest_word(str_)) #
