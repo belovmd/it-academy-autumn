@@ -17,7 +17,7 @@ def longest_word(str_):
     line_str = str_.split()
     new_list = list()
     for words in line_str:
-        new_list.append(words.split(punctuation))
+        new_list.append(words.strip(punctuation))
 
     new_list.sort(key=len, reverse=True)
     if len(new_list) == 0:
