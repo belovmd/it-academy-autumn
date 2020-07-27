@@ -11,10 +11,30 @@ def fibonacci(n):
     """
 
     # write your code here
-    return ''  # write return value here
+
+    if n == 0:
+        i3 = 0
+
+    if n == 1:
+        i3 = 1
+
+
+    else:
+        i1 = 0
+        i2 = 1
+
+        while n - 1  > 0:
+            i3 = i1+i2
+            i1 = i2
+            i2 = i3
+
+            n-=1
+    print(i3)
+    #return ''  # write return value here
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    n = 0
-    print(fibonacci(n))
+    n = 14
+    #print(fibonacci(n))
+    fibonacci(n)
