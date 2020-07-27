@@ -29,12 +29,12 @@ def fibonacci(n):
             i2 = i3
 
             n-=1
-    print(i3)
-    #return ''  # write return value here
+
+    return i3  # write return value here
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    n = 14
-    #print(fibonacci(n))
-    fibonacci(n)
+
+    n = int(input('Введите n-ое число Фибоначчи:'))
+    print(fibonacci(n))
