@@ -11,12 +11,39 @@ def palindrom(n):
     :param n: Число.
     :return: Bool. True или False. Является ли число палиндромом.
     """
+    i = True
+    if n <= 10:
+        i = False
+    if n == 100:
+        i = False
+    if n == 1000:
+        i = False
 
-    # write your code here
-    return ''  # write return value here
+    if n > 10:
+        if n < 100:
+            for i in range(1, 10):
+                if i == (n // 10):
+                    if i == (n % 10):
+                        i = True
+                        break
+                    else:
+                        i = False
+
+    if n > 100:
+        if n < 1000:
+            for i in range(1, 10):
+                if i == (n // 100):
+                    if i == (n % 10):
+                        i = True
+                        break
+                    else:
+                        i = False
+
+    return i
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    n = 0
+    n = int(input("Enter the number:"))
+
     print(palindrom(n))
