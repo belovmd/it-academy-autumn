@@ -43,4 +43,4 @@ if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
     str_ = ''
     str_ = input('Введите предложение:')
-    print(longest_word(str_)) #
+    print(longest_word(str_)) 
