@@ -30,5 +30,6 @@ if __name__ == '__main__':
     s = int(input('Введите количество товаров:'))
     print(total_sum(m, n, s)) 
    
+   
 
 
