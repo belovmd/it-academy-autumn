@@ -12,12 +12,22 @@ def sub_string(str_):
     :param str_: входная строка
     :return: строка. Получившееся выражение
     """
-
+    y = []
+    
+    for i in str_:
+        if i not in y and i != ' ':
+            y.append(i)
+   
+            z = ''.join(y)
+    print(z)
+            
+          
     # write your code here
-    return ''  # write return value here
-
+    #return ''  # write return value here
 
 if __name__ == '__main__':
-    # здесь можно сделать ввод из консоли и проверить работу функции
-    str_ = ''
-    print(sub_string(str_))
+    #str_ = input('Введите предложение:')
+    str_ = 'abc cde def'
+    #print(sub_string(str_))
+    sub_string(str_)
+
