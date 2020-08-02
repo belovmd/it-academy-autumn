@@ -29,5 +29,6 @@ if __name__ == '__main__':
     n = int(input('Введите сумму в копейках:'))
     s = int(input('Введите количество товаров:'))
     print(total_sum(m, n, s)) 
+   
 
 
