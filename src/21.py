@@ -1,3 +1,10 @@
+"""
+Guess the Number game
+Try to guess random number based on
+higher lower advices.
+"""
+
+
 import random
 
 guesses_made = 0

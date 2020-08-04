@@ -1,3 +1,9 @@
+"""
+Time, conditionals, from..import, for..else
+Check user state based on time
+"""
+
+
 from time import localtime
 
 activities = {8: 'Sleeping',

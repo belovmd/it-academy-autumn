@@ -1,3 +1,9 @@
+"""
+Functions
+Print greetings
+"""
+
+
 def greet(name):
     print('Hello', name)
 

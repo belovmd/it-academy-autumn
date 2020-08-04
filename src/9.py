@@ -1,3 +1,9 @@
+"""
+Opening files
+Print text from all .py files in project
+"""
+
+
 # indent your Python code to put into an email
 import glob
 # glob supports Unix style pathname extensions

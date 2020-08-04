@@ -1,3 +1,9 @@
+"""
+Triple-quoted strings, while loop
+Print song about dying beer
+"""
+
+
 REFRAIN = '''
 %d bottles of beer on the wall,
 %d bottles of beer,

@@ -1,3 +1,10 @@
+"""
+csv module, tuple unpacking, cmp() built-in
+Create stocks.csv file with stock values and prints
+their current status
+"""
+
+
 import csv
 
 

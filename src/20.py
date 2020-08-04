@@ -1,3 +1,8 @@
+"""
+8-Queens Problem
+"""
+
+
 BOARD_SIZE = 8
 
 

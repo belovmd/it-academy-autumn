@@ -1,3 +1,9 @@
+"""
+Dictionaries, generator expressions
+Count result price of apples and bananas
+"""
+
+
 prices = {'apple': 0.40, 'banana': 0.50}
 my_purchase = {
     'apple': 1,

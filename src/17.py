@@ -1,3 +1,8 @@
+"""
+8-Queens Problem (recursion)
+"""
+
+
 BOARD_SIZE = 8
 
 

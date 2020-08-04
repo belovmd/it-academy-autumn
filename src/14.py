@@ -1,3 +1,9 @@
+"""
+Doctest-based testing
+Test median func with doc test
+"""
+
+
 def median(pool):
 
     """Statistical median to demonstrate doctest.

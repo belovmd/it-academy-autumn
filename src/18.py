@@ -1,3 +1,9 @@
+"""
+Prime numbers sieve w/fancy generators
+Generate prime numbers
+"""
+
+
 import itertools
 
 
