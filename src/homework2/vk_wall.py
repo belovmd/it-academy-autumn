@@ -1,3 +1,6 @@
+
+# необходимо получить записи всей стены странице vk
+
 import requests
 import time
 import datetime
@@ -84,7 +87,7 @@ def make_posts(all_posts):
             text = post['text']
         except:
             text = ''
-        wordlist.append(text)
+        wordlist.append(text) #фильтруем текст в отдельный список
 
         filtered_post = {
             'date': date,
