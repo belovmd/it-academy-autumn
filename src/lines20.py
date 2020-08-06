@@ -1,6 +1,8 @@
 import itertools
 
 
+# Prime numbers sieve w/fancy generators
+
 def iter_primes():
     numbers = itertools.count(2)
 

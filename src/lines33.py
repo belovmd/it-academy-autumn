@@ -1,5 +1,7 @@
 import random
 
+# "Guess the Number" Game
+
 guesses_made = 0
 
 name = input('Hello! What is your name?\n')

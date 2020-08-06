@@ -1,5 +1,7 @@
 import xml.etree.ElementTree as etree
 
+# XML/HTML parsing
+
 dinner_recipe = '''<html>
 <body>
 <table>

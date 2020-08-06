@@ -1,6 +1,8 @@
 import csv
 
 
+# csv module, tuple unpacking, cmp() built-in
+
 def cmp(a, b):
     return (a > b) - (a < b)
 

@@ -1,5 +1,7 @@
 from time import localtime
 
+# Time, conditionals, from..import, for..else
+
 activities = {
     8: 'Sleeping',
     9: 'Commuting',
