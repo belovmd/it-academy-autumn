@@ -8,7 +8,7 @@
 """
 
 
-def count_pairs(lst):
+def count_pairs_simple(lst):
     count = 0
     for start in range(len(lst)):
         for el in lst[start + 1:]:
@@ -17,6 +17,16 @@ def count_pairs(lst):
     return count
 
 
+def count_pairs_advanced(lst):
+    count_elements = {}
+    for el in lst:
+        count_elements[el] = count_elements.get(el, 0) + 1
+    return sum([sum(range(value)) for value in count_elements.values()])
+
+
+
 
 if __name__ == '__main__':
-    print(count_pairs(pair))
+    pair = [1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 2, 2, 1]
+    print(count_pairs_simple(pair))
+    print(count_pairs_advanced(pair))
