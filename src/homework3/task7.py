@@ -18,13 +18,11 @@
 
 def chocolate(n, m, k, t):
 
-    """
-    :param n: сторона шоколоадки
-    :param m: другая сторона шоколоадки
-    :param k: 1) площадь куска 2) 3) кол-во долек в шоколадке
-    :param t: кол-во разломов
-    :return: tuple(bool, bool, bool)
-    """
+    # :param n: сторона шоколоадки
+    # :param m: другая сторона шоколоадки
+    # :param k: 1) площадь куска 2) 3) кол-во долек в шоколадке
+    # :param t: кол-во разломов
+    # :return: tuple(bool, bool, bool)
 
     area = n * m
 
