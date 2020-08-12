@@ -34,6 +34,7 @@ while babies < 100:
 def greet(name):
     print('Hello', name)
 
+
 greet('Jack')
 greet('Jill')
 greet('Bob')
@@ -58,7 +59,7 @@ grocery_bill = sum(prices[fruit] * my_purchase[fruit]
 print('I owe the groser $%.2f' % grocery_bill)
 
 
-# 8 This program adds up integers that have been passed as arguments in the command line
+# 8 This program adds up integers
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
     print('sum =', total)
@@ -113,6 +114,7 @@ class BankAccount(object):
     def overdrawn(self):
         return self.balance < 0
 
+
 my_account = BankAccount(15)
 my_account.withdraw(50)
 print(my_account.balance, my_account.overdrawn())
@@ -127,9 +129,11 @@ def median(pool):
     else:
         return (copy[int(size / 2 - 1)] + copy[int(size / 2)]) / 2
 
+
 class TestMedian(unittest.TestCase):
     def testMedian(self):
         self.assertEqual(median([2, 9, 9, 7, 9, 2, 4, 5, 8]), 7)
+
 
 if __name__ == '__main__':
     unittest.main()
@@ -151,6 +155,7 @@ for has_chars, frags in groupby(lines, bool):
 def cmp(a, b):
     return (a > b) - (a < b)
 
+
 with open('stocks.csv', 'w', newline='') as stocksFileW:
     writer = csv.writer(stocksFileW)
     writer.writerows([
@@ -171,6 +176,7 @@ with open('stocks.csv', 'r') as stocksFile:
 # 18 lines: 8-Queens Problem (recursion)
 BOARD_SIZE = 8
 
+
 def under_attack(col, queens):
     left = right = col
 
@@ -180,6 +186,7 @@ def under_attack(col, queens):
         if c in (left, col, right):
             return True
     return False
+
 
 def solve(n):
     if n == 0:
@@ -191,6 +198,7 @@ def solve(n):
             for i in range(BOARD_SIZE)
             for solution in smaller_solutions
             if not under_attack(i + 1, solution)]
+
 
 for answer in solve(BOARD_SIZE):
     print(answer)
@@ -204,6 +212,7 @@ def iter_primes():
         prime = next(numbers)
         yield prime
         numbers = filter(prime.__rmod__, numbers)
+
 
 for p in iter_primes():
     if p > 1000:
@@ -231,8 +240,10 @@ for ingredient in tree.getiterator('tr'):
 # 28 lines: 8-Queens Problem (define your own exceptions)
 BOARD_SIZE = 8
 
+
 class BailOut(Exception):
     pass
+
 
 def validate(queens):
     left = right = col = queens[-1]
@@ -240,6 +251,7 @@ def validate(queens):
         left, right = left - 1, right + 1
         if r in (left, col, right):
             raise BailOut
+
 
 def add_queen(queens):
     for i in range(BOARD_SIZE):
@@ -253,6 +265,7 @@ def add_queen(queens):
         except BailOut:
             pass
     raise BailOut
+
 
 queens = add_queen([])
 print(queens)
