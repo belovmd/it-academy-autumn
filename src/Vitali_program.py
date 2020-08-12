@@ -1,4 +1,4 @@
-# 1
+# 1 line: Output
 import csv
 import itertools
 from itertools import groupby
@@ -9,43 +9,45 @@ from time import localtime
 import unittest
 import xml.etree.ElementTree as etree
 
-
 print('Hello, world!')
 
-# 2
+
+# 2 lines: Input, assignment
 name = input('What is your name?\n')
 print('Hi, %s.' % name)
 
-# 3
+
+# 3 lines: For loop, built-in enumerate function, new style formatting
 friends = ['john', 'pat', 'gary', 'michael']
 for i, name in enumerate(friends):
     print("iteration {iteration} is {name}".format(iteration=i, name=name))
 
-# 4
+
+# 4 lines: Fibonacci, tuple assignment
 parents, babies = (1, 1)
 while babies < 100:
     print('This generation has {0} babies'.format((babies)))
     parents, babies = (babies, parents + babies)
 
 
-# 5
+# 5 lines: Functions
 def greet(name):
     print('Hello', name)
-
 
 greet('Jack')
 greet('Jill')
 greet('Bob')
 
-# 6
 
+# 6  lines: Import, regular expressions
 for test_string in ['555-1212', 'ILL-EGAL']:
     if re.match(r'^\d{3}-\d{4}$', test_string):
         print(test_string, 'is a valid US local phone number')
     else:
         print(test_string, 'regected')
 
-# 7
+
+# 7 lines: Dictionaries, generator expressions
 prices = {'apple': 0.40, 'banana': 0.50}
 my_purchase = {
     'apple': 1,
@@ -56,27 +58,15 @@ grocery_bill = sum(prices[fruit] * my_purchase[fruit]
 print('I owe the groser $%.2f' % grocery_bill)
 
 
+# 8 This program adds up integers that have been passed as arguments in the command line
 try:
     total = sum(int(arg) for arg in sys.argv[1:])
     print('sum =', total)
 except ValueError:
     print('Please supply integer arguments')
 
-# #9 indent your Python code to put into an email
-# import glob
-# #glob supports Unix style pathname extensions
-# python_files = glob.glob('*.py')
-# for file_name in sorted(python_files):
-#     print('    ----' + file_name)
-#
-#     with open(file_name) as f:
-#         for line in f:
-#             print('   ' + line.rstrip())
-#     print()
 
-#
-# 10
-
+# 10 lines: Time, conditionals, from..import, for..else
 activities = {8: 'Sleeping',
               9: 'Commuting',
               17: 'Working',
@@ -94,7 +84,8 @@ for activity_time in sorted(activities.keys()):
     else:
         print('Unknown, AFK or sleeping!')
 
-# 11
+
+# 11 lines: Triple-quoted strings, while loop
 REFRAIN = '''
 %d bottles of beer on the wall,
 %d bottles of beer,
@@ -108,7 +99,7 @@ while bottles_of_beer > 1:
     bottles_of_beer -= 1
 
 
-# 12
+# 12 lines: Classes
 class BankAccount(object):
     def __init__(self, initial_balance=0):
         self.balance = initial_balance
@@ -122,13 +113,12 @@ class BankAccount(object):
     def overdrawn(self):
         return self.balance < 0
 
-
 my_account = BankAccount(15)
 my_account.withdraw(50)
 print(my_account.balance, my_account.overdrawn())
 
 
-# 13
+# 13 lines: Unit testing with unittest
 def median(pool):
     copy = sorted(pool)
     size = len(copy)
@@ -137,57 +127,30 @@ def median(pool):
     else:
         return (copy[int(size / 2 - 1)] + copy[int(size / 2)]) / 2
 
-
 class TestMedian(unittest.TestCase):
     def testMedian(self):
         self.assertEqual(median([2, 9, 9, 7, 9, 2, 4, 5, 8]), 7)
 
-
 if __name__ == '__main__':
     unittest.main()
 
-# 14
-# def median(pool):
-#     '''Statistical median to demonstrate doctest.
-#
-#     6 #change to 7 in order to pass the test
-#     '''
-#     median([2, 9, 9, 7, 9, 2, 4, 5, 8])
-#     copy = sorted(pool)
-#     size = len(copy)
-#     if size % 2 == 1:
-#         return copy[int((size - 1) / 2)]
-#     else:
-#         return (copy[int(size / 2 - 1)] + copy[int(size / 2)]) / 2
-#
-# if __name__ == '__main__':
-#     doctest.testmod()
-#
-# # 15
+
+# 15 lines: itertools
 lines = '''
 This is the
 first paragraph.
 
 This is the second.
 '''.splitlines()
-# Use itertools.groupby and bool to return groups of
-# consecutive lines that either have content or don't.
 for has_chars, frags in groupby(lines, bool):
     if has_chars:
         print(' '.join(frags))
-# PRINTS:
-# This is the first paragraph.
-# This is the second.
-
-# 16
 
 
-# need to define cmp function in Python 3
+# 16 lines: csv module, tuple unpacking, cmp() built-in
 def cmp(a, b):
     return (a > b) - (a < b)
 
-
-# write stocks data as comma-separated values
 with open('stocks.csv', 'w', newline='') as stocksFileW:
     writer = csv.writer(stocksFileW)
     writer.writerows([
@@ -196,7 +159,6 @@ with open('stocks.csv', 'w', newline='') as stocksFileW:
         ['CNET', 'CNET Networks, Inc.', 8.62, -0.13, -1.4901]
     ])
 
-# read stocks data, print status messages
 with open('stocks.csv', 'r') as stocksFile:
     stocks = csv.reader(stocksFile)
 
@@ -205,9 +167,9 @@ with open('stocks.csv', 'r') as stocksFile:
         status = status_labels[cmp(float(change), 0.0)]
         print('%s is %s (%.2f)' % (name, status, float(pct)))
 
-# 18
-BOARD_SIZE = 8
 
+# 18 lines: 8-Queens Problem (recursion)
+BOARD_SIZE = 8
 
 def under_attack(col, queens):
     left = right = col
@@ -218,7 +180,6 @@ def under_attack(col, queens):
         if c in (left, col, right):
             return True
     return False
-
 
 def solve(n):
     if n == 0:
@@ -231,33 +192,26 @@ def solve(n):
             for solution in smaller_solutions
             if not under_attack(i + 1, solution)]
 
-
 for answer in solve(BOARD_SIZE):
     print(answer)
 
 
-# 20
+# 20 lines: Prime numbers sieve w/fancy generators
 def iter_primes():
-    # an iterator of all numbers between 2 and +infinity
     numbers = itertools.count(2)
 
-    # generate primes forever
     while True:
-        # get the first number from the iterator (always a prime)
         prime = next(numbers)
         yield prime
-
-        # this code iteratively builds up a chain of
-        # filters...slightly tricky, but ponder it a bit
         numbers = filter(prime.__rmod__, numbers)
-
 
 for p in iter_primes():
     if p > 1000:
         break
     print(p)
 
-# 21
+
+# 21 lines: XML/HTML parsing
 dinner_recipe = '''<html><body><table>
 <tr><th>amt</th><th>unit</th><th>item</th></tr>
 <tr><td>24</td><td>slices</td><td>baguette</td></tr>
@@ -266,26 +220,19 @@ dinner_recipe = '''<html><body><table>
 <tr><td>1</td><td>jar</td><td>pesto</td></tr>
 </table></body></html>'''
 
-# From http://effbot.org/zone/element-index.htm
 tree = etree.fromstring(dinner_recipe)
-
-# For invalid HTML use http://effbot.org/zone/element-soup.htm
-# import ElementSoup, StringIO
-# tree = ElementSoup.parse(StringIO.StringIO(dinner_recipe))
-
 pantry = set(['olive oil', 'pesto'])
 for ingredient in tree.getiterator('tr'):
     amt, unit, item = ingredient
     if item.tag == "td" and item.text not in pantry:
         print("%s: %s %s" % (item.text, amt.text, unit.text))
 
-# 28
-BOARD_SIZE = 8
 
+# 28 lines: 8-Queens Problem (define your own exceptions)
+BOARD_SIZE = 8
 
 class BailOut(Exception):
     pass
-
 
 def validate(queens):
     left = right = col = queens[-1]
@@ -293,7 +240,6 @@ def validate(queens):
         left, right = left - 1, right + 1
         if r in (left, col, right):
             raise BailOut
-
 
 def add_queen(queens):
     for i in range(BOARD_SIZE):
@@ -308,12 +254,12 @@ def add_queen(queens):
             pass
     raise BailOut
 
-
 queens = add_queen([])
 print(queens)
 print("\n".join(". " * q + "Q " + ". " * (BOARD_SIZE - q - 1) for q in queens))
 
-# 33
+
+# 33 lines: "Guess the Number"
 guesses_made = 0
 name = input('Hello! What is your name?\n')
 number = random.randint(1, 20)
