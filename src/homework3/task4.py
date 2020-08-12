@@ -24,8 +24,6 @@ def count_pairs_advanced(lst):
     return sum([sum(range(value)) for value in count_elements.values()])
 
 
-
-
 if __name__ == '__main__':
     pair = [1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 2, 2, 1]
     print(count_pairs_simple(pair))

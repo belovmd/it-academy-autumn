@@ -30,6 +30,5 @@ def tuple_practice():
     print('len =', len(tuple3))
 
 
-
 if __name__ == '__main__':
     tuple_practice()

@@ -19,4 +19,3 @@ def zero_to_right(lst):
 if __name__ == '__main__':
     lst = [0, 2, 0, 1, 0, 4, 3, 2, 0, 1, 0, 4, 0]
     print(zero_to_right(lst))
-
