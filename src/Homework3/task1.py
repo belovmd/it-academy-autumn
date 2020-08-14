@@ -13,7 +13,3 @@ def fizz_buzz():
 
 
 fizz_buzz()
-
-
-print([('Fizz' * (not el % 3) +
-        'Buzz' * (not el % 5)) or el for el in range(1, 101)])
