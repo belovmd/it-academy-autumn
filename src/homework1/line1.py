@@ -1,0 +1,3 @@
+# Output
+
+print('Hello, World!')
