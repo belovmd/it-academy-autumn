@@ -15,10 +15,11 @@ def sub_string(str_):
 
     # write your code here
     result = ''
+    set_ = {' '}
 
-    source_str = str_.replace(' ', '')
-    for ch in source_str:
-        if ch not in result:
+    for ch in str_:
+        if ch not in set_:
+            set_.add(ch)
             result += ch
 
     return result  # write return value here

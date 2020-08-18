@@ -24,9 +24,12 @@ def longest_word(str_):
         words.append(item.strip(punctuation))
 
     max_len_word = ''
+    max_len = 0
     for word in words:
-        if len(word) > len(max_len_word):
+        word_len = len(word)
+        if word_len > max_len:
             max_len_word = word
+            max_len = word_len
 
     return max_len_word  # write return value here
 

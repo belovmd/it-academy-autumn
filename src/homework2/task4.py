@@ -21,7 +21,7 @@ def count_letters(str_):
         elif ch.islower():
             low_number += 1
 
-    return (low_number, up_number)  # write return value here
+    return low_number, up_number  # write return value here
 
 
 if __name__ == '__main__':

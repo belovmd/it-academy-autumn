@@ -19,7 +19,7 @@ def fibonacci(n):
 
     previous, current = (1, 1)
     for i in range(2, n):
-        previous, current = (current, previous + current)
+        previous, current = current, previous + current
 
     return current  # write return value here
 
