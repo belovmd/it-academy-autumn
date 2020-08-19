@@ -15,9 +15,12 @@ from math import factorial
 def combinations(n, k):
     return factorial(n) // (factorial(k) * factorial(n - k))
 
-# Метод считает кол-во одинаковых элементов в списке
+
+# Метод pairs_counter считает кол-во одинаковых элементов в списке
 # и считает кол-во сочетаний для каждого элемента.
 # Возвращает словарь {элемент : кол-во пар}
+
+
 def pairs_counter(lst):
     elements_count = {}
     for el in lst:
@@ -30,7 +33,7 @@ def pairs_counter(lst):
     return pairs_count
 
 
-numbers = "1 1 1 2 2 3 4 4 2 2 2 3 5 6 7 3 4 5 6 7 7 7 10 10 12 12 13 10 1000 1000"
+numbers = "1 1 1 2 2 3 4 4 2 2 2 3 5 6 7 3 4 5 6 7 7 7 10"
 numbers_lst = [int(el) for el in numbers.split()]
 
 pairs = pairs_counter(numbers_lst)
