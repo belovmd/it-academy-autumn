@@ -1,3 +1,0 @@
-# Output
-
-print('Hello, World!')
