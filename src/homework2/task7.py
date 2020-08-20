@@ -21,23 +21,23 @@ print(' '.join(str(a) for a in count))
  по спирали, выходящей из левого
 верхнего угла и закрученной по часовой стрелке,"""
 d = int(input())
-nums = [[int(0) for j in range(d)] for i in range(d)]
-r = 1
-a = d
-while a > 0:
-    for i in range(r - 1, r):
-        for j in range(r - 1, a):
-            nums[i][j] = nums[i][j - 1] + 1
-    for j in range(a - 1, a - 2, -1):
-        for i in range(r, a):
-            nums[i][j] = nums[i - 1][j] + 1
-    for i in range(a - 1, a - 2, -1):
-        for j in range(a - 2, r - 2, -1):
-            nums[i][j] = nums[i][j + 1] + 1
-    for j in range(r - 1, r - 2, -1):
-        for i in range(a - 2, r - 1, -1):
-            nums[i][j] = nums[i + 1][j] + 1
-    a -= 1
-    r += 1
-for row in nums:
-    print(' '.join([str(elem) for elem in row]))
+matrix = [[int(0) for column in range(d)] for row in range(d)]
+row_start = 1
+row_end = d
+while row_end > 0:
+    for row in range(row_start - 1, row_start):
+        for column in range(row_start - 1, row_end):
+            matrix[row][column] = matrix[row][column - 1] + 1
+    for columns in range(row_end - 1, row_end - 2, -1):
+        for row in range(row_start, row_end):
+            matrix[row][columns] = matrix[row - 1][columns] + 1
+    for row in range(row_end - 1, row_end - 2, -1):
+        for columns in range(row_end - 2, row_start - 2, -1):
+            matrix[row][columns] = matrix[row][columns + 1] + 1
+    for column in range(row_start - 1, row_start - 2, -1):
+        for row in range(row_end - 2, row_start - 1, -1):
+            matrix[row][column] = matrix[row + 1][column] + 1
+    row_end -= 1
+    row_start += 1
+for rows in matrix:
+    print(' '.join([str(elem) for elem in rows]))
