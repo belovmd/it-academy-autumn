@@ -13,12 +13,15 @@ def longest_word(str_):
         несколько, самое левое в строке).
         в случае если
     """
-
-    # write your code here
-    return ''  # write return value here
+    import re
+    str_ = re.sub(r'[^\w\s]', '', str_.replace("_", ""))
+    str_ = str_.split(' ')
+    spis = []
+    for slovo in str_:
+        spis.append(len(slovo))
+    return str_[spis.index(max(spis))]
 
 
 if __name__ == '__main__':
-    # здесь можно сделать ввод из консоли и проверить работу функции
-    str_ = ''
+    str_ = '________'
     print(longest_word(str_))

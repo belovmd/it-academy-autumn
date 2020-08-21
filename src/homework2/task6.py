@@ -6,17 +6,26 @@
 
 
 def palindrom(n):
-    """Поиск числа фибоначчи.
+    """Проверка палиндрома.
 
     :param n: Число.
     :return: Bool. True или False. Является ли число палиндромом.
     """
-
-    # write your code here
-    return ''  # write return value here
+    from decimal import Decimal
+    num_copy = n
+    check_sum = 0
+    last_dig = 0
+    while num_copy >= 1:
+        last_dig = int(num_copy % 10)
+        check_sum = check_sum * 10 + last_dig
+        num_copy = (Decimal(int(num_copy)) / 10)
+    if check_sum == n:
+        return True
+    else:
+        return False
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    n = 0
+    n = 1234567890987654321
     print(palindrom(n))
