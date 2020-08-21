@@ -14,5 +14,5 @@ for num in range(1, 101):
     else:
         print(num)
 # 2
-print(['Fizz' * (not el % 3) + 'Buzz' * (not el % 5)
+print(['Fizz' * (not el % 3) + 'Buzz' * (not el % 5) \
        or el for el in range(1, 101)])
