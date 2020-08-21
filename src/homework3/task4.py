@@ -12,7 +12,7 @@ control = []
 for num in lst:
     num_count = lst.count(num)
     if num not in control and num_count > 1:
-        pairs = (num_count * (num_count-1)) / 2
+        pairs = (num_count * (num_count - 1)) / 2
         control.append(num)
     else:
         continue
