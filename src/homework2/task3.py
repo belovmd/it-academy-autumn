@@ -14,13 +14,13 @@ def sub_string(str_):
     """
 
     # write your code here
-    dbl_string = ''
+    final_str = ''
     for i in range(len(str_)):
-        if str_[i] == " " or str_[i] in dbl_string:
+        if str_[i] == " " or str_[i] in final_str:
             continue
         else:
-            dbl_string += str_[i]
-    return (dbl_string)  # write return value here
+            final_str += str_[i]
+    return (final_str)  # write return value here
 
 
 if __name__ == '__main__':
