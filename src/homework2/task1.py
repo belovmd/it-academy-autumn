@@ -15,13 +15,10 @@ def total_sum(m, n, s):
         'x rubles y kopecks'
     """
     # write your code here
-    rubles = m * s
-    kopecks = n * s
-    rubles += kopecks // 100
-    kopecks %= 100
+    cost = (m + n / 100) * s
 
     # write return value here
-    return '{0} rubles {1} kopecks'.format(rubles, kopecks)
+    return '{0} rubles {1} kopecks'.format(int(cost // 1), int(cost * 100 % 100))
 
 
 if __name__ == '__main__':
