@@ -29,7 +29,7 @@ def find_even_index(arr):
 и если они идут в правильном порядке.
 Иначе False.
 
-:param text: Строка со скобками
+:param string: Строка со скобками
 :return: True, False
 
 Пример:
@@ -41,17 +41,25 @@ def find_even_index(arr):
 
 
 def valid_parentheses(string):
-    counter = 0
 
-    for ch in string:
-        if ch == '(':
-            counter += 1
-        if ch == ')':
-            counter -= 1
-        if counter < 0:
+    parentheses = {
+        '(': ')',
+        '{': '}',
+        '[': ']',
+        '<': '>',
+    }
+
+    close_parentheses = parentheses.values()
+
+    stack = []
+
+    for prnth in string:
+        if prnth in parentheses:
+            stack.append(prnth)
+        elif not (len(stack) and parentheses[stack.pop()] == prnth):
             return False
 
-    return counter == 0
+    return len(stack) == 0
 
 
 """
@@ -75,12 +83,14 @@ def decrypt(text, n):
     if text in ("", None):
         return text
 
-    dn = len(text) // 2
+    text_center = len(text) // 2
 
     for i in range(n):
-        left = text[:dn]
-        right = text[dn:]
-        text = "".join(right[i:i + 1] + left[i:i + 1] for i in range(dn + 1))
+        left_part = text[:text_center]
+        right_part = text[text_center:]
+        text = ""
+        for ch_id in range(text_center + 1):
+            text = "".join(right_part[ch_id:ch_id + 1] + left_part[ch_id:ch_id + 1])
 
     return text
 
@@ -120,15 +130,12 @@ def encrypt(text, n):
 
 # рекурсия
 def tree_by_levels(node):
-    # ключ: уровень дерева
-    # значение: список элементов на этом уровне
     result_dct = {}
 
     def next_lvl(tree_node, lvl_number):
         if node is None:
             return
-        result_dct[lvl_number] = result_dct.get(lvl_number, [])
-        result_dct[lvl_number].append(tree_node.value)
+        result_dct.setdefault(lvl_number, []).append(tree_node.value)
         next_lvl(tree_node.left, lvl_number + 1)
         next_lvl(tree_node.right, lvl_number + 1)
 
