@@ -1,7 +1,6 @@
 # Given an array of integers your solution should find the smallest integer.
 
 def find_smallest_int(arr):
-
     min = arr[0]
     for i in arr:
         if i < min:
@@ -74,3 +73,37 @@ def friend(x):
     friends = list(filter(lambda y: len(y) == 4, x[:]))
 
     return friends
+
+
+# Write a function that takes a string of braces, and determines
+# if the order of the braces is valid. It should return true
+# if the string is valid, and false if it's invalid.
+# This Kata is similar to the Valid Parentheses Kata,
+# but introduces new characters: brackets [], and curly braces {}.
+# All input strings will be nonempty, and will only consist of parentheses,
+# brackets and curly braces: ()[]{}.
+
+def validBraces(string):
+    braces = [["(", ")"], ["{", "}"], ["[", "]"]]
+    paired = []
+
+    for i in range(len(string) - 1):
+        temp = []
+        temp.append(string[i])
+        temp.append(string[i + 1])
+        if temp in braces:
+            paired.append(temp)
+
+    if len(paired) * 2 == len(string):
+        return True
+    else:
+        for i in range(len(string) // 2):
+            temp = []
+            temp.append(string[i])
+            temp.append(string[-i - 1])
+            if temp in braces:
+                paired.append(temp)
+
+            if len(paired) * 2 == len(string):
+                return True
+    return False

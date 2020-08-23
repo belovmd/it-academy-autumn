@@ -13,20 +13,12 @@ def palindrom(n):
     """
 
     # write your code here
-    div = 1
-    while (n / div >= 10):
-        div *= 10
-
-    while (n != 0):
-        led = n // div
-        trail = n % 10
-        if (led != trail):
-            return False
-
-        n = (n % div) // 10
-        div = div / 100
-
-    return True
+    temp = n
+    reverse = 0
+    while temp:
+        reverse = reverse * 10 + (temp % 10)
+        temp //= 10
+    return n == reverse
     # write return value here
 
 
