@@ -18,7 +18,7 @@ def total_sum(m, n, s):
     cost = (m + n / 100) * s
 
     # write return value here
-    return '{0} rubles {1} kopecks'.format(int(cost // 1), int(cost * 100 % 100))
+    return '{} rubles {} kopecks'.format(int(cost // 1), int(cost * 100 % 100))
 
 
 if __name__ == '__main__':

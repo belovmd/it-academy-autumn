@@ -49,8 +49,6 @@ def valid_parentheses(string):
         '<': '>',
     }
 
-    close_parentheses = parentheses.values()
-
     stack = []
 
     for prnth in string:
@@ -89,8 +87,8 @@ def decrypt(text, n):
         left_part = text[:text_center]
         right_part = text[text_center:]
         text = ""
-        for ch_id in range(text_center + 1):
-            text = "".join(right_part[ch_id:ch_id + 1] + left_part[ch_id:ch_id + 1])
+        for ch in range(text_center + 1):
+            text = "".join(right_part[ch:ch + 1] + left_part[ch:ch + 1])
 
     return text
 
