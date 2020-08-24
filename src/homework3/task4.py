@@ -27,3 +27,5 @@ for i in dct_:
 print('количество пар: ', sum_par)
     #(a*a-1)/2
 
+
+    
