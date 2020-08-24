@@ -14,12 +14,10 @@ def count_letters(str_):
     # write your code here
     low_number = 0
     up_number = 0
-    upper_list = 'QWERTYUIOPLKJHGFDSAZXCVBNM'
-    lower_list = 'qwertyuioplkjhgfdsazxcvbnm'
-    for i in range(len(str_)):
-        if str_[i] in upper_list:
+    for symb in str_:
+        if 'A' <= symb <= 'Z':
             up_number += 1
-        if str_[i] in lower_list:
+        if 'a' <= symb <= 'z':
             low_number += 1
     tuple_num = (low_number, up_number)
     return (tuple_num)
