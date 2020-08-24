@@ -1,3 +1,6 @@
+import string
+
+
 # Given an array of integers your solution should find the smallest integer.
 
 def find_smallest_int(arr):
@@ -88,10 +91,10 @@ BRACES = {"(": ")", "{": "}", "[": "]"}
 
 def validBraces(string):
     waiting = []
-    for l in string:
-        if l in BRACES.keys():
-            waiting.append(BRACES[l])
-        elif not waiting or waiting.pop() != l:
+    for i in string:
+        if i in BRACES.keys():
+            waiting.append(BRACES[i])
+        elif not waiting or waiting.pop() != i:
             return False
     return not waiting
 
@@ -108,7 +111,7 @@ def divisors(integer):
         if not integer % n:
             result.append(n)
     if len(result) == 0:
-        return ('%i is prime' % integer)
+        return (integer,'is prime')
     else:
         return result
 
@@ -121,7 +124,6 @@ def divisors(integer):
 # Given a string, detect whether or not it is a pangram.
 # Return True if it is, False if not. Ignore numbers and punctuation.
 
-import string
 
 def is_pangram(s):
     return {*s.lower()}.issuperset(string.ascii_lowercase)
