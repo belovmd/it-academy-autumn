@@ -83,27 +83,45 @@ def friend(x):
 # All input strings will be nonempty, and will only consist of parentheses,
 # brackets and curly braces: ()[]{}.
 
+BRACES = {"(": ")", "{": "}", "[": "]"}
+
+
 def validBraces(string):
-    braces = [["(", ")"], ["{", "}"], ["[", "]"]]
-    paired = []
+    waiting = []
+    for l in string:
+        if l in BRACES.keys():
+            waiting.append(BRACES[l])
+        elif not waiting or waiting.pop() != l:
+            return False
+    return not waiting
 
-    for i in range(len(string) - 1):
-        temp = []
-        temp.append(string[i])
-        temp.append(string[i + 1])
-        if temp in braces:
-            paired.append(temp)
 
-    if len(paired) * 2 == len(string):
-        return True
+# Create a function named divisors/Divisors
+# that takes an integer n > 1 and returns an array
+# with all of the integer's divisors(except for 1 and the number itself),
+# from smallest to largest. If the number is prime return
+# the string '(integer) is prime'
+
+def divisors(integer):
+    result = []
+    for n in range(2, integer):
+        if not integer % n:
+            result.append(n)
+    if len(result) == 0:
+        return ('%i is prime' % integer)
     else:
-        for i in range(len(string) // 2):
-            temp = []
-            temp.append(string[i])
-            temp.append(string[-i - 1])
-            if temp in braces:
-                paired.append(temp)
+        return result
 
-            if len(paired) * 2 == len(string):
-                return True
-    return False
+
+# A pangram is a sentence that contains every single letter
+# of the alphabet at least once. For example,
+# the sentence "The quick brown fox jumps over the lazy dog"
+# is a pangram, because it uses the letters A-Z at least once
+# (case is irrelevant).
+# Given a string, detect whether or not it is a pangram.
+# Return True if it is, False if not. Ignore numbers and punctuation.
+
+import string
+
+def is_pangram(s):
+    return {*s.lower()}.issuperset(string.ascii_lowercase)
