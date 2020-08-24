@@ -22,5 +22,6 @@ def list_practice():
     print(lst)
     print(lst1)
 
+
 if __name__ == '__main__':
     list_practice()

@@ -11,7 +11,7 @@
 def element_pairs(str_):
     count = 0
     for ind, el in enumerate(str_.split()):
-        for el1 in str_.split()[ind+1:]:
+        for el1 in str_.split()[ind + 1:]:
             if el == el1:
                 count += 1
     return count
