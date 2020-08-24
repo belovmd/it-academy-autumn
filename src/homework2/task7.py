@@ -111,7 +111,7 @@ def divisors(integer):
         if not integer % n:
             result.append(n)
     if len(result) == 0:
-        return (integer,'is prime')
+        return (integer, 'is prime')
     else:
         return result
 
