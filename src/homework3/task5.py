@@ -13,6 +13,7 @@ for i in lst_:
 for i in lst_:
    if dct_.get(i) == 1:
        print(i)
+        
     
 
 
