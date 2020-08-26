@@ -38,7 +38,6 @@ def country_of_city(str_):
         country = list_of_country_and_its_cities[0]
         cities = list_of_country_and_its_cities[1:]
         countries_cities[country] = cities
-    print(countries_cities)
 
     for string in list_of_input[int(list_of_input[0]) + 2:]:
         for country in countries_cities:
