@@ -15,9 +15,7 @@ def fibonacci(n):
     previous_result = 1
     result = 1
     for number in range(1, n - 1):
-        temp = result
-        result = result + previous_result
-        previous_result = temp
+        previous_result, result = result, result + previous_result
 
     return result  # write return value here
 
