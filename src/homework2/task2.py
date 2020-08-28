@@ -5,6 +5,9 @@
 """
 
 
+from string import punctuation
+
+
 def longest_word(str_):
     """Поиск самого длинного слова в предложении.
 
@@ -14,32 +17,21 @@ def longest_word(str_):
         в случае если
     """
 
-    words_list = []
-    word_str = ''
+    words_with_punctuation = str_.split()
+    words = [word.strip(punctuation) for word in words_with_punctuation]
 
-    for symbol in str_:
-        if symbol.isalpha():
-            word_str += symbol
-        elif len(word_str) != 0:
-            words_list.append(word_str)
-            word_str = ''
-
-    if word_str:
-        words_list.append(word_str)
-
-    max_length = 0
     max_word = ''
-    for word in words_list:
-        word_length = len(word)
-        if word_length > max_length:
-            max_length = word_length
+    max_length = 0
+    for word in words:
+        word_len = len(word)
+        if word_len > max_length:
             max_word = word
-
+            max_length = word_len
     # write your code here
     return max_word  # write return value here
 
 
 if __name__ == '__main__':
     # здесь можно сделать ввод из консоли и проверить работу функции
-    str_ = ''
+    str_ = 'word {} wordd  '
     print(longest_word(str_))
