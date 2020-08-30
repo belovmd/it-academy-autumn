@@ -17,7 +17,7 @@ def sub_string(str_):
 
     new_str = ''.join(str_.split())
     list_ = []
-    if str_ != '' and not str_.isspace():
+    if str_ and not str_.isspace():
         for elem in new_str:
             if elem not in list_:
                 list_.append(elem)

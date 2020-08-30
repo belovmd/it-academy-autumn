@@ -16,17 +16,11 @@ def total_sum(m, n, s):
     """
     # write your code here
 
-    rubles = m
-    kopecks = n
-    rubles_total = rubles * s
-    kopecks_total = kopecks * s
-    if 100 <= kopecks_total < 1000000:
-        kopecks_rez = kopecks_total % 100
-        rubles_total = rubles_total + kopecks_total // 100
-    elif kopecks_total < 100:
-        kopecks_rez = kopecks_total
-    return '{0} rubles {1} kopecks'. \
-        format(rubles_total, kopecks_rez)
+    all_rubles = m * s
+    all_kopecks = n * s
+    rubles = all_rubles + all_kopecks // 100
+    kopecks = all_kopecks % 100
+    return '{0} rubles {1} kopecks'.format(rubles, kopecks)
 
 
 if __name__ == '__main__':
