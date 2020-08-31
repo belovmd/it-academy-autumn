@@ -9,14 +9,16 @@
 
 
 def element_pairs(str_):
+    numbers_count = {}
     count = 0
-    for ind, el in enumerate(str_.split()):
-        for el1 in str_.split()[ind + 1:]:
-            if el == el1:
-                count += 1
+    for el in str_.split():
+        numbers_count[el] = numbers_count.get(el, 0) + 1
+
+    for cnt in numbers_count.values():
+        count += cnt * (cnt - 1) // 2
     return count
 
 
 if __name__ == '__main__':
-    str_ = '1 1 1 1'
+    str_ = '1 1 1 1 2 2'
     print(element_pairs(str_))
