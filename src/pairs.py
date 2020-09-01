@@ -12,8 +12,9 @@
 from math import factorial
 
 
-def combinations(n, k):
-    return factorial(n) // (factorial(k) * factorial(n - k))
+def get_pairs_count(n):
+    n_factorial = factorial(n - 2)
+    return n_factorial * n * (n - 1) // (n_factorial << 1)
 
 
 # Метод pairs_counter считает кол-во одинаковых элементов в списке
@@ -29,7 +30,7 @@ def pairs_counter(lst):
     for el in elements_count:
         count = elements_count[el]
         if count > 1:
-            pairs_count[el] = combinations(count, 2)
+            pairs_count[el] = get_pairs_count(count)
     return pairs_count
 
 

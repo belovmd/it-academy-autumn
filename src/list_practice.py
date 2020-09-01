@@ -12,12 +12,12 @@ List practice
 """
 
 # 1
-lst = [i + j for i in ['a', 'b'] for j in ['b', 'c', 'd']]
+lst = [i + j for i in 'ab' for j in 'bcd']
 print(lst)
 # 2
 print(lst[::2])
 # 3
-lst = ['{}a'.format(i) for i in range(1, 5)]
+lst = ['{}a'.format(i) for i in '1234']
 print(lst)
 # 4
 print(lst.pop(1))
