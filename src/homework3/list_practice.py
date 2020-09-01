@@ -9,12 +9,11 @@
 # Скопируйте список и добавьте в него элемент '2a'
 # так чтобы в исходном списке этого элемента не было.
 
-letters = 'bcd'
-list_1 = ['a' + letters[i] for i in range(3)] + ['b' + letters[i] for i in range(3)]
+list_1 = [i + j for i in 'ab' for j in 'bcd']
 print(list_1)
 print(list_1[::2])
 
-list_2 = [str(i) + 'a' for i in range(1, 5)]
+list_2 = [i + 'a' for i in '1234']
 print(list_2)
 
 print(list_2.pop(1))
