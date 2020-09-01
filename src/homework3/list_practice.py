@@ -9,8 +9,8 @@
 # Скопируйте список и добавьте в него элемент '2a'
 # так чтобы в исходном списке этого элемента не было.
 
-letters = ['a', 'b', 'c', 'd']
-list_1 = [letters[i] + letters[j] for i in range(2) for j in range(1, 4)]
+letters = 'bcd'
+list_1 = ['a' + letters[i] for i in range(3)] + ['b' + letters[i] for i in range(3)]
 print(list_1)
 print(list_1[::2])
 
