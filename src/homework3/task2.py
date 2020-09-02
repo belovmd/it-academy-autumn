@@ -17,7 +17,7 @@
 
 def list_practice():
     # 1
-    lst1 = [chr1 + chr2 for chr1 in ['a', 'b'] for chr2 in ['b', 'c', 'd']]
+    lst1 = [chr1 + chr2 for chr1 in 'ab' for chr2 in 'bcd']
     print(lst1)
 
     # 2
@@ -25,7 +25,7 @@ def list_practice():
     print(lst2)
 
     # 3
-    lst3 = [str(chr1) + 'a' for chr1 in range(1, 5)]
+    lst3 = [str(chr1) + 'a' for chr1 in '1234']
     print(lst3)
 
     # 4
