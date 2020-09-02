@@ -51,10 +51,6 @@ def cities_with_similar():
                 break
 
 
-
-
-
-
 if __name__ == '__main__':
     cities_with_similar
     cities()
