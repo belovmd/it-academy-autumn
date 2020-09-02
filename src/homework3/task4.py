@@ -18,4 +18,3 @@ def count_pairs(lst):
 if __name__ == '__main__':
     pair = [1, 1, 1, 1]
     print(count_pairs(pair))
-
