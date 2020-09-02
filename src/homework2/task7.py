@@ -68,9 +68,13 @@ There will always be only one integer that appears an odd number of times.
 
 
 def find_it(seq):
-    for i in set(seq):
-        if seq.count(i) % 2:
-            return i
+    nums = {}
+    for num in seq:
+        nums[num] = nums.get(num, 0) + 1
+    for key, value in nums.items():
+        if value % 2:
+            return key
+
 
 
 # 4 https://www.codewars.com/kata/514b92a657cdc65150000006
