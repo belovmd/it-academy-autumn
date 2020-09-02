@@ -8,7 +8,10 @@
 """
 
 
-str_ = 'abc abc abd abd    abdd abddd abd anc \n a a a aaa a aaa aa aa \n \n \n abc abc'
+str_ = 'abc abc abd abd  ' \
+       '  abdd abddd abd anc \n a a a aaa ' \
+       'a aaa aa aa \n \n \n abc abc'
+
 set_ = set(str_.split())
 print(*set_)
 print('Всего слов - {}'.format(len(set_)))
