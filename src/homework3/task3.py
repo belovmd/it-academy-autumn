@@ -15,7 +15,7 @@ def tuple_practice():
     print(tuple1)
 
     # 2
-    tuple2 = 'a', 'b', 'c'
+    tuple2 = ('a', 'b', 'c')
     lst2 = list(tuple2)
     print(lst2)
 
@@ -24,7 +24,7 @@ def tuple_practice():
     print(a, b, c)
 
     # 4
-    tuple3 = '1, 2, 3.',
+    tuple3 = ('1, 2, 3.',)
     for el in tuple3:
         print(el)
     print('len =', len(tuple3))
