@@ -76,7 +76,6 @@ def find_it(seq):
             return key
 
 
-
 # 4 https://www.codewars.com/kata/514b92a657cdc65150000006
 '''
 If we list all the natural numbers below 10
