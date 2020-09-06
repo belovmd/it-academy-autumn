@@ -88,3 +88,36 @@ def num_primorial(n):
 
 
 print(num_primorial(6))
+
+"""
+https://leetcode.com/problems/valid-parentheses/
+Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', 
+determine if the input string is valid.
+
+An input string is valid if:
+
+Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
+"""
+
+
+test_string = '[]['
+
+
+def is_valid(str) -> bool:
+    brackets_dict = {
+        '{': '}',
+        '(': ')',
+        '[': ']'
+    }
+    stack = []
+
+    for char in str:
+        if char in brackets_dict.keys():
+            stack.append(char)
+        elif len(stack) == 0 or brackets_dict[stack.pop()] != char:
+            return False
+    return not stack
+
+
+print(is_valid(test_string))
