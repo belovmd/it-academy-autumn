@@ -1,8 +1,16 @@
+"""
+Дан список чисел. Посчитайте, сколько в нем пар элементов,
+ равных друг другу. Считается, что любые два элемента,
+равные друг другу образуют одну пару, которую необходимо посчитать.
+Входные данные - строка из чисел, разделенная пробелами.
+Выходные данные - количество пар.
+Важно: 1 1 1 - это 3 пары, 1 1 1 1 - это 6 пар
+"""
 str_ = '1 1 1 1 '
 count = 0
-list_comp = [int(el) for el in str_.split()]
-for i in range(len(list_comp)):
-    for j in range(i + 1, len(list_comp)):
-        if list_comp[i] == list_comp[j]:
+lst = str_.split()
+for i in range(len(lst)):
+    for j in range(i + 1, len(lst)):
+        if lst[i] == lst[j]:
             count += 1
 print(count)
