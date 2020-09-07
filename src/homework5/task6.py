@@ -6,7 +6,7 @@
 
 def max_div_2(num):
     n = 0
-    while not num % 2:
+    while not num & 1:
         n += 1
         num >>= 1
     return 1 << n
