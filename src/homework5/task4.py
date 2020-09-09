@@ -37,7 +37,6 @@ def read_films():
     try:
         with open(work_path + '\\ratings.list') as f:
             for line in f:
-
                 try:
                     items = line.split()
                     # film line
