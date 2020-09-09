@@ -9,8 +9,6 @@
     years.txt – гистограмма годов.
 """
 from os import path
-from itertools import groupby
-import re
 
 
 def read_films():
@@ -28,9 +26,9 @@ def read_films():
         :param film:
         :return:
         """
-        votes, rate, *_ = film
-        return (votes > 25000 and
-                (votes/(votes+25000))*rate + (25000/(votes+25000))*6.90)
+        vot, rate, *_ = film
+        result = vot / (vot + 25000) * rate + (25000 / (vot + 25000)) * 6.90
+        return vot > 25000 and result
 
     work_path = path.join(path.dirname(__file__), 'data', 'task4')
     films = []
@@ -47,8 +45,8 @@ def read_films():
                     name = []
                     year = 0
                     for item in items[3:]:
-                        if (len(item) == 6 and
-                                item[1:-1].isdigit() and not year):
+                        is_year = item[1:-1].isdigit()
+                        if len(item) == 6 and is_year and not year:
                             year = item[1:-1]
                             continue
                         name.append(item)
