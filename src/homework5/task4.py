@@ -13,13 +13,18 @@ from os import path
 
 def read_films():
     def weighted_rank(film):
-        """
-        weighted rank = (v/(v+k))*X + (k/(v+k))*C
+        """weighted rank = (v/(v+k))*X + (k/(v+k))*C
+
         where:
+
         X = average for the movie (mean)
+
         v = number of votes for the movie
+
         k = minimum votes required to be listed in the top 250
-         (currently 25000)
+
+        (currently 25000)
+
         C = the mean vote across the whole report (currently 6.90)
 
         :param film:
