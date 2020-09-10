@@ -8,13 +8,9 @@
 '''
 lst = list(map(int, input().split()))
 total_pairs = 0
-control = []
-for num in lst:
-    num_count = lst.count(num)
-    if num not in control and num_count > 1:
-        pairs = (num_count * (num_count - 1)) / 2
-        control.append(num)
-    else:
-        continue
-    total_pairs += pairs
+el_cnt = {}
+for el in lst:
+    el_cnt[el] = el_cnt.get(el, 0) + 1
+for el in el_cnt.values():
+    total_pairs += (el * (el - 1)) / 2
 print(total_pairs)
