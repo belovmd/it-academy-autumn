@@ -14,7 +14,7 @@ lst = [chr1 + chr2 for chr1 in lst1[0:2] for chr2 in lst1[1:4]]
 print(lst)
 # 2
 lst = ['ab', 'ac', 'ad', 'bb', 'bc', 'bd']
-print(lst[:-1:2])
+print(lst[::2])
 # 3, 4, 5
 lst = [str(num) + 'a' for num in range(1, 5)]
 print(lst)
