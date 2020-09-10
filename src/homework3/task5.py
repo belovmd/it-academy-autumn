@@ -3,9 +3,9 @@
 в котором они встречаются в списке.
 '''
 lst = [1, 2, 4, 3, 4, 3, 'ghjd', 6, 6, 7, 4, 8, 9, 10]
-print([el for el in lst if lst.count(el) == 1])   # выводится списком
-# вариант 2. я не придумала как в 1 строчку кода выводить список по 1 элементу
-lst = [1, 2, 4, 3, 4, 'fhgh', 3, 6, 6, 7, 4, 8, 9, 10]
+el_cnt = {}
 for el in lst:
-    if lst.count(el) == 1:
-        print(el)
+    el_cnt[el]= el_cnt.get(el, 0) + 1
+for key, value in el_cnt.items():
+    if value == 1:
+        print(key)
