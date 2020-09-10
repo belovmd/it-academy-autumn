@@ -5,7 +5,7 @@
 lst = [1, 2, 4, 3, 4, 3, 'ghjd', 6, 6, 7, 4, 8, 9, 10]
 el_cnt = {}
 for el in lst:
-    el_cnt[el]= el_cnt.get(el, 0) + 1
+    el_cnt[el] = el_cnt.get(el, 0) + 1
 for key, value in el_cnt.items():
     if value == 1:
         print(key)
