@@ -22,7 +22,7 @@ print(origin_list)
 print(origin_list[0::2])
 
 # 3
-origin_list = [str(el) + 'a' for el in range(1, 5)]
+origin_list = [el + 'a' for el in '1234']
 print(origin_list)
 
 # 4

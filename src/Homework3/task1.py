@@ -9,7 +9,7 @@ FizzBuzz
 
 def fizz_buzz():
     for el in range(1, 101):
-        print(('Fizz' * (not el % 3) + 'Buzz' * (not el % 5)) or el, sep='\n')
+        print(('Fizz' * (not el % 3) + 'Buzz' * (not el % 5)) or el)
 
 
 fizz_buzz()

@@ -7,19 +7,10 @@
 """
 
 
-def swap_(lst, right_index, left_index):
-    tmp = lst[left_index]
-    lst[left_index] = lst[right_index]
-    lst[right_index] = tmp
-
-
 def zero_to_hero(lst):
-    left_index = 0
-    for right_index in range(0, len(lst)):
-        if lst[right_index] != 0:
-            if left_index < right_index:
-                swap_(lst, right_index, left_index)
-            left_index += 1
+    for index in range(len(lst)):
+        if not lst[index]:
+            lst.append(lst.pop(index))
     print(lst)
 
 
@@ -27,6 +18,6 @@ lst = [0, 1, 0, 3, 1, 0, 5, 4, 7, 10, 0, 1, 0]
 
 zero_to_hero(lst)
 
-lst = [0, 3, 0]
+lst = [0]
 
 zero_to_hero(lst)

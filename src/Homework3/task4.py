@@ -9,16 +9,22 @@
 """
 
 
-lst = [1, 1, 1]
+def count_pairs(count):
+    return count * (count - 1) // 2
 
 
 def find_pairs(lst):
-    count = 0
-    for i in range(len(lst)):
-        for j in range(i + 1, len(lst)):
-            if lst[i] == lst[j]:
-                count += 1
-    return count
+    elements_dict = {}
+    result = 0
+    for el in lst:
+        elements_dict[el] = elements_dict.get(el, 0) + 1
+    for count_of_element in elements_dict.values():
+        if count_of_element >= 2:
+            result += count_pairs(count_of_element)
+    return result
+
+
+lst = [1, 1, 1, 1]
 
 
 print(find_pairs(lst))
