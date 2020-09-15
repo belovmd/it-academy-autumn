@@ -29,7 +29,36 @@ French
 
 def languages_of_pupils(str_):
     list_of_input = str_.split('\n')
+    list_of_input = [line.strip() for line in list_of_input]
     pupil_count = int(list_of_input[0])
+    pupil = 0
+    language_base = {}
+
+    for line in list_of_input[1:]:
+        if line.isdigit():
+            pupil += 1
+            language_base[pupil] = set()
+            if pupil > pupil_count:
+                break
+            continue
+        else:
+            language_base[pupil].add(line)
+
+    all_pupils_languages = set()
+    min_one_pupil_languages = set()
+    for ind, set_ in enumerate(language_base.values()):
+        min_one_pupil_languages |= set_
+        if not ind:
+            all_pupils_languages |= set_
+        else:
+            all_pupils_languages &= set_
+
+    print(len(all_pupils_languages))
+    for lang in all_pupils_languages:
+        print(lang)
+    print(len(min_one_pupil_languages))
+    for lang in min_one_pupil_languages:
+        print(lang)
     
 
 if __name__ == '__main__':
