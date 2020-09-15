@@ -5,7 +5,7 @@
 
 
 def numbers_in_two_lists(lst1, lst2):
-    return len(set(lst1 + lst2))
+    return len(set(lst1) & set(lst2))
 
 
 if __name__ == '__main__':
