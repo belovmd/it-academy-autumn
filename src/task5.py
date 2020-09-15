@@ -59,7 +59,7 @@ def languages_of_pupils(str_):
     print(len(min_one_pupil_languages))
     for lang in min_one_pupil_languages:
         print(lang)
-    
+
 
 if __name__ == '__main__':
     input_str = """3
