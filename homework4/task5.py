@@ -42,6 +42,7 @@ while n:
 for i in lst_1:
     dct_3[i] = dct_3.get(i, 0) + 1
 print('количество языков,которые знают все школьники ', len(dct_3))
+
 for key, value in dct_3.items():
     print(key)
 

@@ -11,7 +11,6 @@ M городов, перечисленных выше.
 Для каждого из запроса выведите название страны, в котором находится данный город.
 Примеры
 Входные данные
-2
 Russia Moscow Petersburg Novgorod Kaluga
 Ukraine Kiev Donetsk Odessa
 """
@@ -34,7 +33,6 @@ while n:
     str_ = input('введите названия городов:')
     lst_1.append(str_)
     n -= 1
-
 
 for word in lst_1:
     for key, value in dct_1.items():
