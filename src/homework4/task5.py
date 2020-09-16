@@ -5,7 +5,7 @@
 # Первая строка входных данных содержит количество
 # школьников N. Далее идет N чисел Mi, после каждого из
 # чисел идет Mi строк, содержащих названия языков,
-# которые знает i-й школьник. 
+# которые знает i-й школьник.
 # Пример входных данных:
 #     3          # N количество школьников
 # 2          # M1 количество языков первого школьника
@@ -37,8 +37,8 @@ for key, value in dct_lngs.items():
         counter_all += 1
         all_lst.append(key)
     else:
-       counter_any += 1
-       any_lst.append(key)
+        counter_any += 1
+        any_lst.append(key)
 print(counter_all)
 for el in all_lst:
     print(el)
