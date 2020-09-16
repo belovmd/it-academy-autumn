@@ -20,6 +20,8 @@ lst_ = []
 lst_1 = []
 dct_1 = {}
 dct_ = {}
+
+
 while n:
     str_ = input('введите страну и названия городов:')
     lst_ = str_.split()
@@ -33,6 +35,7 @@ while n:
     str_ = input('введите названия городов:')
     lst_1.append(str_)
     n -= 1
+
 
 for word in lst_1:
     for key, value in dct_1.items():

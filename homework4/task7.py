@@ -6,6 +6,7 @@
 a = 1071
 b = 462
 
+
 while not a == b:
     if a > b:
         a = a - b
@@ -15,4 +16,6 @@ while not a == b:
         b = b - a
         a = a
         print(a, b)
+
+
 print(a, b)

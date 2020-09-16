@@ -27,6 +27,8 @@ sum_ = 0
 kl_ = 0
 n = int(input('введите школьников: '))
 kl_ = n
+
+
 while n:
     k = int(input('введите количество языков,которые знает школьник: '))
     while k:
@@ -39,17 +41,21 @@ while n:
     n -= 1
     lst_ = []
 
+
 for i in lst_1:
     dct_3[i] = dct_3.get(i, 0) + 1
 print('количество языков,которые знают все школьники ', len(dct_3))
 
+
 for key, value in dct_3.items():
     print(key)
+
 
 for key, value in dct_3.items():
     if value == kl_:
         sum_ += 1
 print('количество языков,которые знает хотя бы один школьник ', sum_)
+
 
 for key, value in dct_3.items():
     if value == kl_:
