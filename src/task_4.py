@@ -6,11 +6,12 @@
 Выходные данные - количество пар.
 Важно: 1 1 1 - это 3 пары, 1 1 1 1 - это 6 пар
 """
-str_ = '1 1 1 1 '
-count = 0
-lst = str_.split()
-for i in range(len(lst)):
-    for j in range(i + 1, len(lst)):
-        if lst[i] == lst[j]:
-            count += 1
-print(count)
+para = 0
+dct = {}
+lst = [1, 1, 1, 1, 2, 3, 4]
+for elem in lst:
+    dct[elem] = dct.get(elem, 0) + 1
+for value in dct.values():
+    if value > 1:
+        para += (value * (value - 1)) // 2
+print(para)
