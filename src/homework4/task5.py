@@ -4,7 +4,7 @@
 # которые знает хотя бы один из школьников.
 
 
-stud = [{input('Языки: ') for i in range(int(input('Введите кол-во языков: ')))}
+stud = [{input('Языки: ') for i in range(int(input('Кол-во языков: ')))}
         for j in range(int(input('Введите кол-во школьников: ')))]
 every, some = set.intersection(*stud), set.union(*stud)
 print(len(every), *sorted(every), sep='\n')
