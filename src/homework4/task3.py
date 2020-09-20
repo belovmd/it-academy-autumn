@@ -2,5 +2,6 @@
 # Посчитайте, сколько различных чисел содержится
 # одновременно как в первом списке, так и во втором.
 
-
-print(len(set(input().split()) & set(input().split())))
+set1 = set(input().split())
+set2 = set(input().split())
+print(len(set1 & set2))

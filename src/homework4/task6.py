@@ -8,6 +8,6 @@
 
 
 words = set()
-for i in range(int(input())):
-    words.update(input().split())
+for i in range(int(input('Введите кол-во строк: '))):
+    words.update(input('Введите строку: ').split())
 print(len(words))

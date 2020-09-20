@@ -2,5 +2,6 @@
 # Посчитайте, сколько различных чисел
 # входит только в один из этих списков
 
-
-print(len(set(input().split()) ^ set(input().split())))
+set1 = set(input().split())
+set2 = set(input().split())
+print(len(set1 ^ set2))
