@@ -1,6 +1,8 @@
 from datetime import datetime
 from functools import wraps
+
 from src.homework5 import functions
+
 
 # Создайте декоратор, который хранит результаты вызовы функции
 # (за все время вызовов, не только текущий запуск программы)
@@ -17,10 +19,11 @@ def decor(foo):
             result.write('Результат: {}\n'.format(res))
             result.write('\n')
         return res
+
     return wrapper
 
 
-decor(functions.setTask1)()
+decor(functions.languges)()
 
 # Имена функций:
 # Про страны с городами - 'capitals',

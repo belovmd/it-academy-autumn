@@ -51,7 +51,7 @@ def setTask2(set1=None, set2=None):
 
 def languges(*stud):
     if not stud:
-        stud = [{input('Языки: ') for i in range(int(input('Кол-во языков: ')))}
+        stud = [{input('Язык: ') for i in range(int(input('Кол-во языков: ')))}
                 for j in range(int(input('Введите кол-во школьников: ')))]
     every, some = set.intersection(*stud), set.union(*stud)
     print(len(every), *sorted(every), sep='\n')
