@@ -40,10 +40,14 @@ def country_of_city(str_):
         countries_cities[country] = cities
 
     for string in list_of_input[int(list_of_input[0]) + 2:]:
+        res_countries = []
         for country in countries_cities:
             if string.strip() in countries_cities[country]:
-                print(country)
-                break
+                res_countries.append(country)
+        if res_countries:
+            for country in res_countries:
+                print(country, end=' ')
+            print()
         else:
             print('No')
 
