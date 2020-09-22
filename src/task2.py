@@ -45,9 +45,7 @@ def country_of_city(str_):
             if string.strip() in countries_cities[country]:
                 res_countries.append(country)
         if res_countries:
-            for country in res_countries:
-                print(country, end=' ')
-            print()
+            print(' '.join(res_countries))
         else:
             print('No')
 
