@@ -11,7 +11,7 @@ def pow_two(num):
         else:
             degree += 1
     return '{} - ближайшая степень двойки, ' \
-           'Число - {}'. format(degree, 1 << degree)
+           'Число - {}'.format(degree, 1 << degree)
 
 
 print(pow_two(int(input('Введите число: '))))
