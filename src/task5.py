@@ -35,7 +35,7 @@ for student in range(number_student):
 for word in var:
     dct[word] = dct.get(word, 0) + 1
 for word in dct:
-    if dct[word] == 3:
+    if dct[word] == number_student:
         count_all_languages += 1
         all_languages.append(word)
     else:
