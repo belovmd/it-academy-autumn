@@ -25,11 +25,15 @@
 
 num_cntrs = int(input())
 cities_dct = {}
+out_cntrs_lst = []
 for _ in range(num_cntrs):
-    city_lst = input().split()
-    temp_dct = {el: city_lst[0] for el in city_lst[1:]}
-    cities_dct.update(temp_dct)
+    country, *cities = input().split()
+    for el in cities:
+        cities_dct[el] = cities_dct.get(el, '') + country + ' '
+
+
 num_cities = int(input())
 for _ in range(num_cities):
     city = str(input())
-    print(cities_dct.get(city))
+    out_cntrs_lst += cities_dct.get(city).split()
+print('\n'.join(el for el in out_cntrs_lst))
