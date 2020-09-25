@@ -5,13 +5,7 @@
 # слов содержится в этом тексте
 
 
+import re
 text = 'gfijhf,fkdhk v  kgd,kjfg ,lflksf.'
-count = 0
-for el in range(1, len(text)):
-    if el == 1 and text[0].isalpha():
-        count += 1
-    elif text[el].isalpha() and not text[el - 1].isalpha():
-        count += 1
-    else:
-        continue
-print(count)
+result = re.findall(r'\w+', text)
+print(len(result))
