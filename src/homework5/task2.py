@@ -2,8 +2,8 @@
 Создайте декоратор, который хранит результаты вызовы функции
 (за все время вызовов, не только текущий запуск программы)
 """
-import sqlite3 as lite
 from datetime import datetime
+import sqlite3 as lite
 
 
 DATABASE_FILE = "test.db"
@@ -15,7 +15,7 @@ SQL_CREATE_TABLE = """ CREATE TABLE IF NOT EXISTS Logs (
                         result text
                         ); """
 
-SQL_INSERT_LOG = """ INSERT INTO Logs (NAME,DATE,RESULT) 
+SQL_INSERT_LOG = """ INSERT INTO Logs (NAME,DATE,RESULT)
                      Values(\"{name}\",\"{date}\",\"{result}\")
                  """
 

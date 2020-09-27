@@ -18,9 +18,11 @@ def run_function_from_module(module_name, func_name):
 
 def runner(*args):
     if args:
-        [run_function_from_module(functions, param) for param in args if isinstance(param, str)]
+        [run_function_from_module(functions, param)
+         for param in args if isinstance(param, str)]
     else:
-        [run_function_from_module(functions, param) for param in dir(functions)]
+        [run_function_from_module(functions, param)
+         for param in dir(functions)]
 
 
 runner()
