@@ -9,6 +9,9 @@ MOVIELIST_FILENAME = 'top250_movies.txt'
 YEARS_HISTOGRAM_FILENAME = 'years.txt'
 RATINGS_HISTOGRAM_FILENAME = 'ratings.txt'
 COUNT_OF_MOVIES = 250
+NAME_INDEX = 3
+RATING_INDEX = 2
+YEAR_INDEX = -1
 
 
 def get_database():
@@ -36,9 +39,9 @@ def get_database():
 def get_data_from_line(line):
     line = line.strip()
     array = line.split()
-    rating = str(array[2])
-    year = str(array[-1]).strip('()')
-    name = ' '.join(array[3: -1])
+    rating = str(array[RATING_INDEX])
+    year = str(array[YEAR_INDEX]).strip('()')
+    name = ' '.join(array[NAME_INDEX: -1])
 
     return (rating, year, name)
 
@@ -58,7 +61,6 @@ def create_histogram_file(data, file_name):
 
 
 names, years, ratings = get_database()
-
 create_movie_names_file(names)
 create_histogram_file(years, YEARS_HISTOGRAM_FILENAME)
 create_histogram_file(ratings, RATINGS_HISTOGRAM_FILENAME)
