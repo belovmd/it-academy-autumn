@@ -2,6 +2,8 @@
 В файле хранятся данные с сайта IMDB.
 Скопированные данные хранятся в файле ./data/ ratings.list.
 """
+import matplotlib.pyplot as plt
+
 
 SEPARATOR_HEADER = 'New  Distribution  Votes  Rank  Title\n'
 DB_FILENAME = 'ratings.list'
@@ -60,7 +62,19 @@ def create_histogram_file(data, file_name):
             file.write(result)
 
 
+def draw_histogram(data, interval=1):
+    keys = sorted(data.keys())
+    values = [data[key] for key in keys]
+
+    plt.bar(keys, values)
+    plt.xticks(range(0, len(keys), interval))
+    plt.show()
+
+
 names, years, ratings = get_database()
 create_movie_names_file(names)
 create_histogram_file(years, YEARS_HISTOGRAM_FILENAME)
 create_histogram_file(ratings, RATINGS_HISTOGRAM_FILENAME)
+
+draw_histogram(years, 10)
+draw_histogram(ratings)
