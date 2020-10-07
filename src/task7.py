@@ -4,13 +4,13 @@
 """
 
 
-big = 99
-small = 8
+num1 = 9
+num2 = 99
 
 while 1:
-    if not big % small:
+    if not num1 % num2:
         break
     else:
-        big, small = small, big % small
+        num1, num2 = num2, num1 % num2
 
-print(small)
+print(num2)
