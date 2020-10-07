@@ -7,15 +7,11 @@
 
 
 def count_words(str_):
-    count = 0
-    list_of_strings = str_.split('\n')
-    for string in list_of_strings:
-        count += len(string.split())
-    return count
+    return len(set(str_.split()))
 
 
 if __name__ == '__main__':
-    str_ = """kjfljd kjdfldkjf   kjkdj
+    str_ = """kjfljd kjfljd   kjkdj
     kdjfdknn  kjdkf
     fldf dfkjkfjdk   h dkfjdkj dfkd"""
 
