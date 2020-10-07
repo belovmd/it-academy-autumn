@@ -34,31 +34,29 @@ def country_of_city(str_):
     countries_cities = {}
 
     for string in list_of_input[1:int(list_of_input[0]) + 1]:
-        list_of_country_and_its_cities = string.split()
-        country = list_of_country_and_its_cities[0]
-        cities = list_of_country_and_its_cities[1:]
-        countries_cities[country] = cities
+        country, *cities = string.split()
+        for city in cities:
+            countries_cities[city] = (countries_cities.get(city, [])
+                                      + [country, ])
 
     for string in list_of_input[int(list_of_input[0]) + 2:]:
-        res_countries = []
-        for country in countries_cities:
-            if string.strip() in countries_cities[country]:
-                res_countries.append(country)
+        res_countries = countries_cities.get(string.strip(), None)
+
         if res_countries:
-            for country in res_countries:
-                print(country, end=' ')
-            print()
+            print(' '.join(res_countries))
         else:
             print('No')
 
 
 if __name__ == '__main__':
-    input_str = """2
+    input_str = """4
     Russia Moscow Petersburg Novgorod Kaluga
     Ukraine Kiev Donetsk Odessa
+    Belarus Brest Minsk
+    France Brest Paris
     4
     Odessa
     Moscow
     Novgorod
-    Kiev"""
+    Brest"""
     country_of_city(input_str)
