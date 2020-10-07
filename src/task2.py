@@ -36,7 +36,7 @@ def country_of_city(str_):
     for string in list_of_input[1:int(list_of_input[0]) + 1]:
         country, *cities = string.split()
         for city in cities:
-            cities_table[city] = cities_table.get(city, []).append(country)
+            cities_table[city] = cities_table.get(city, []) + [country, ]
 
     for string in list_of_input[int(list_of_input[0]) + 2:]:
         res_countries = cities_table.get(string.strip(), None)
