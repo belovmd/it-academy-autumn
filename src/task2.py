@@ -31,16 +31,15 @@ Russia
 
 def country_of_city(str_):
     list_of_input = str_.split('\n')
-    countries_cities = {}
+    cities_table = {}
 
     for string in list_of_input[1:int(list_of_input[0]) + 1]:
         country, *cities = string.split()
         for city in cities:
-            countries_cities[city] = (countries_cities.get(city, []) +
-                                     [country, ])
+            cities_table[city] = cities_table.get(city, []).append(country)
 
     for string in list_of_input[int(list_of_input[0]) + 2:]:
-        res_countries = countries_cities.get(string.strip(), None)
+        res_countries = cities_table.get(string.strip(), None)
 
         if res_countries:
             print(' '.join(res_countries))
