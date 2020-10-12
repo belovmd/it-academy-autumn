@@ -28,20 +28,11 @@ for _ in range(stud_num):
     for lng in range(lngs_num):
         lng = input('собственно язык?')
         dct_lngs[lng] = dct_lngs.get(lng, 0) + 1
-counter_all = 0
-all_lst = []
-counter_any = 0
-any_lst = []
+set_all, set_any = set(), set()
 for key, value in dct_lngs.items():
     if value == stud_num:
-        counter_all += 1
-        all_lst.append(key)
+        set_all.add(key)
     else:
-        counter_any += 1
-        any_lst.append(key)
-print(counter_all)
-for el in all_lst:
-    print(el)
-print(counter_any)
-for el in any_lst:
-    print(el)
+        set_any.add(key)
+print(len(set_all), *set_all, sep='\n')
+print(len(set_any), *set_any, sep='\n')
