@@ -5,9 +5,6 @@
 
 a = int(input())
 b = int(input())
-while a != 0 and b != 0:
-    if a > b:
-        a = a % b
-    else:
-        b = b % a
-print(a + b)
+while b != 0:
+    a, b = b, a % b
+print(a)
