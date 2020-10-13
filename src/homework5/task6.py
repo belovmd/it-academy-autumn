@@ -4,10 +4,11 @@
 
 num = int(input())
 power_2 = 2 << len(bin(num)) - 3
-div = 1
-while div != 0:
+
+while num:
     power_2 >>= 1
-    div = num % power_2
+    num = num % power_2
+
 if power_2 == 1:
     print('no suitable divisor found')
 else:
