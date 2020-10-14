@@ -20,7 +20,6 @@ def dec(fun):
         fun_name = fun.__name__
         date = str(datetime.now)
         result = fun()
-        # tpl = (fun_name, date, result)
         cur.execute("""INSERT INTO results
             VALUES(?, ?, ?);""", (fun_name, date, result))
         conn.commit()
