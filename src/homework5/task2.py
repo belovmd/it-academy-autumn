@@ -7,7 +7,8 @@ def dec(fun):
     from datetime import datetime
     import sqlite3
 
-    conn = sqlite3.connect('dbname.db')  # для проверки мб использована ':memory:'
+    # для проверки мб использована ':memory:'
+    conn = sqlite3.connect('dbname.db')
     cur = conn.cursor()
     cur.execute("""CREATE TABLE IF NOT EXISTS Results (
        FuncName TEXT,

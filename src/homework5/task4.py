@@ -9,12 +9,14 @@
 import matplotlib.pyplot as plt
 
 
-with open('ratings.list', encoding="ISO-8859-1") as src, open('top250_movies.txt', 'w') as dest:
+with open('ratings.list', encoding="ISO-8859-1") as src,\
+        open('top250_movies.txt', 'w') as dest:
     dct_rank, dct_years = {}, {}
     for line in src:
         if line.startswith('      000000'):
             lst_temp = [el for el in line.split()[2::]]
-            rank, year = float(lst_temp.pop(0)), int(lst_temp.pop(-1).strip('()/I'))
+            rank = float(lst_temp.pop(0))
+            year = int(lst_temp.pop(-1).strip('()/I'))
             dct_rank[rank] = dct_rank.get(rank, 0) + 1
             sorted_rank_lst = sorted(dct_rank.items())
             dct_years[year] = dct_years.get(year, 0) + 1
