@@ -5,9 +5,7 @@
 
 
 def diff(lst1, lst2):
-    diff1 = len(set(lst1) - set(lst2))
-    diff2 = len(set(lst2) - set(lst1))
-    return '{} - в первом списке, {} - во втором.'.format(diff1, diff2)
+    return len(set(lst1) ^ set(lst2))
 
 
 if __name__ == '__main__':

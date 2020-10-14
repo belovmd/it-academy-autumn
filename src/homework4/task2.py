@@ -29,29 +29,17 @@ Russia
 """
 
 
-def cities():
-    cities_collection = {}
-    for _ in range(int(input())):
-        country, *cities = input().split()
-        for city in cities:
-            cities_collection[city] = country
-    for _ in range(int(input())):
-        print(cities_collection[input()])
-
-
-def cities_with_similar():
-    countries = {}
-    for _ in range(int(input())):
-        country, *cities = input().split()
-        countries[country] = cities
-    for _ in range(int(input())):
-        city = input()
-        for key, value in countries.items():
-            if city in value:
-                print(key)
-                break
+def get_country():
+    cities = {}
+    for _ in range(int(input('Number of countries'))):
+        country, *cities_of_country = input().split()
+        for city in cities_of_country:
+            cities[city] = cities.get(city, []) + [country]
+    num_of_cities = int(input('Number of cities'))
+    return [cities.get(input(), '') for _ in range(num_of_cities)]
 
 
 if __name__ == '__main__':
-    cities_with_similar
-    cities()
+    countries = get_country()
+    for el in countries:
+        print(*el, sep=', ')

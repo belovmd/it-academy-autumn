@@ -30,15 +30,31 @@ French
 """
 
 
+from functools import reduce
+
+
 def main():
-    languages = {}
-    students = int(input())
-    for _ in range(students):
-        for __ in range(int(input())):
-            lang = input()
-            languages[lang] = languages.get(lang, 0) + 1
-    print([key for key, value in languages.items() if value == students])
-    print([key for key in languages])
+
+    count_of_students = int(input('count_of_students'))
+
+    languages_of_students = []
+    for student in range(count_of_students):
+        temp_languages = []
+        for languages in range(int(input('count_of_languges'))):
+            temp_languages.append(input('language'))
+        languages_of_students.append(set(temp_languages))
+        temp_languages.clear()
+
+    common = reduce(lambda common, languages: common & languages,
+                    languages_of_students)
+    print(len(common))
+    print(common)
+
+    all_languages = reduce(lambda all, languages: all | languages,
+                           languages_of_students)
+
+    print(len(all_languages))
+    print(all_languages)
 
 
 if __name__ == '__main__':
