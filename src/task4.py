@@ -29,7 +29,6 @@ def get_gist(lst):
     for num in lst:
         gist_data[num] = gist_data.get(num, 0) + 1
 
-
     min_num = min(gist_data.values())
     max_num = max(gist_data.values())
     res = ''
@@ -38,9 +37,10 @@ def get_gist(lst):
             res += str(num) + '|' + '*' * (GIST_MAX_LENGTH // 2)
         return res.strip()
     for num in sorted(gist_data.keys()):
-        res += str(num) + '|' + '*' * (int((gist_data[num] - min_num) *
-                                           GIST_MAX_LENGTH /
-                                           (max_num - min_num))) + '*\n'
+        gist_str = int(
+            (gist_data[num] - min_num) * GIST_MAX_LENGTH / (max_num - min_num)
+        )
+        res += str(num) + '|' + '*' * gist_str + '*\n'
     return res.strip()
 
 
