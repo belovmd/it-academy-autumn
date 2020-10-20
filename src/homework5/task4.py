@@ -1,6 +1,9 @@
+# -*- coding: utf-8 -*-
 import re
+import sys
+import codecs
 
-
+sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 # В файле хранятся данные с сайта IMDB.
 # Скопированные данные хранятся в файле ./data/ ratings.list.
 # Откройте и прочитайте файл(если его нет необходимо вывести ошибку).

@@ -6,11 +6,11 @@
 #  get_ranges([2, 3, 8, 9]) // "2-3,8-9"
 
 
-def get_ranges(list_):
+def get_ranges(numbers):
     input_list = []
     output_list = []
-    for el in list_:
-        if el + 1 not in list_:
+    for el in numbers:
+        if el + 1 not in numbers:
             output_list.append(el)
             input_list.append(output_list.copy())
             output_list.clear()

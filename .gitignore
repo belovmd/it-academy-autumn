@@ -108,4 +108,4 @@ venv.bak/
 .tox/
 .gitignore/
 
-src/homework5/ratings.list
+*.list
