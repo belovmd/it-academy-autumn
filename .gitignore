@@ -109,3 +109,5 @@ venv.bak/
 .gitignore/
 /src/homework5/data/task4/ratings.list.zip
 /src/homework5/data/task4/ratings.list
+/tests/
+/src/homework2/
