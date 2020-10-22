@@ -3,6 +3,9 @@
 (за все время вызовов, не только текущий запуск программы)
 """
 from os import path
+import datetime
+
+write_template = '{date}: args={args}, function={func}'
 
 
 def my_dec(func):
@@ -18,13 +21,15 @@ def my_dec(func):
             history.append(temp)
 
     def wrapper(*args, **kwargs):
-        with open(my_path, 'a') as f:
-            print(*args, file=f)
+        with open(my_path, 'a') as file:
 
+            print(write_template.format(date=str(datetime.datetime.now()),
+                                        args=str(args),
+                                        func=func.__name__),
+                  file=file)
         history.append(list(args))
         result = func(*args, **kwargs)
         return result
-
     return wrapper
 
 
@@ -39,7 +44,7 @@ def my_sum(*args):
 
 
 def main():
-    my_test_lst = [num for num in range(6)]
+    my_test_lst = [num for num in range(7)]
     print(my_sum(my_test_lst, my_test_lst))
 
 
