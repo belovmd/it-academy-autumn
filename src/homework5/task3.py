@@ -20,13 +20,13 @@ def get_ranges(lst):
     :param lst:
     :return: str
     """
-    lst = lst[::-1]
+    work_lst = lst[::-1]
     answer = ''
-    while lst:
-        first = lst.pop()
+    while work_lst:
+        first = work_lst.pop()
         last = first
-        while lst and lst[-1] - last == 1:
-            last = lst.pop()
+        while work_lst and work_lst[-1] - last == 1:
+            last = work_lst.pop()
 
         answer += f'{first}-{last},' if first != last else f'{first},'
     print(lst)
