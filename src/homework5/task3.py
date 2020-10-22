@@ -38,6 +38,5 @@ def main():
     print(get_ranges(lst))
 
 
-
 if __name__ == '__main__':
     main()
