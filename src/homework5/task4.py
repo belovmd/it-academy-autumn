@@ -35,26 +35,25 @@ def read_films():
         return vot > 25000 and result
 
     work_path = path.join(path.dirname(__file__), 'data', 'task4')
+
     films = []
     try:
-        with open(work_path + '\\ratings.list') as f:
+        with open(path.join(work_path, 'ratings.list')) as f:
             for line in f:
                 try:
                     items = line.split()
                     # film line
-                    if not line.strip() or len(items[0]) != 10:
+                    distribution, votes, rate, *name, year = items
+                    if not line.strip() or len(distribution) != 10:
                         continue
-                    votes = items[1]
-                    rate = items[2]
-                    name = []
-                    year = 0
-                    for item in items[3:]:
-                        is_year = item[1:-1].isdigit()
-                        if len(item) == 6 and is_year and not year:
-                            year = item[1:-1]
-                            continue
-                        name.append(item)
+
+                    # year validation
+                    year = year.strip('()')
+                    if not (year and len(year) == 4 and year.isdigit()):
+                        continue
+
                     name = ' '.join(name)
+
                     films.append((int(votes),
                                   float(rate),
                                   name.strip(),
@@ -64,26 +63,29 @@ def read_films():
     except FileNotFoundError:
         print("File not found")
 
+    # sort top 250 films
     films.sort(key=weighted_rank, reverse=True)
     top250_films = []
     count = 0
-    for film in films:
-        if count == 250:
-            break
-        if film not in top250_films:
-            top250_films.append(film)
-            count += 1
-
     rates = []
     names = []
     years = []
-    for film in top250_films:
+    only_name = []
+    for film in films:
+        if count == 250:
+            break
         _, rate, name, year = film
-        rates.append(rate)
-        names.append((rate, name, year))
-        years.append(year)
 
-    with open(work_path + '\\top250_movies.txt', 'w') as f:
+        # if in list exist copy of the film
+        if name not in only_name:
+            top250_films.append(film)
+            rates.append(rate)
+            names.append((rate, name, year))
+            years.append(year)
+            only_name.append(name)
+            count += 1
+
+    with open(path.join(work_path, 'top250_movies.txt'), 'w') as f:
         print(*sorted(names, key=lambda x: x[1]), file=f, sep='\n')
 
     rates.sort()
@@ -95,7 +97,7 @@ def read_films():
         min_rate += 0.1
     for rate in rates:
         dct_rates[rate] += 1
-    with open(work_path + '\\ratings.txt', 'w') as f:
+    with open(path.join(work_path, 'ratings.txt'), 'w') as f:
         for key, value in dct_rates.items():
             print(str(key) + ':', '+' * value, file=f)
 
@@ -108,7 +110,7 @@ def read_films():
         min_year += 1
     for year in years:
         dct_years[year] += 1
-    with open(work_path + '\\years.txt', 'w') as f:
+    with open(path.join(work_path, 'years.txt'), 'w') as f:
         for key, value in dct_years.items():
             print(str(key) + ':', '+' * value, file=f)
 
