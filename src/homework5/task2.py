@@ -2,8 +2,8 @@
 Создайте декоратор, который хранит результаты вызовы функции
 (за все время вызовов, не только текущий запуск программы)
 """
-from os import path
 import datetime
+from os import path
 
 write_template = '{date}: args={args}, function={func}'
 
