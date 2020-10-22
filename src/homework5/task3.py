@@ -21,20 +21,22 @@ def get_ranges(lst):
     :return: str
     """
     lst = lst[::-1]
-    uns = ''
+    answer = ''
     while lst:
         first = lst.pop()
         last = first
         while lst and lst[-1] - last == 1:
             last = lst.pop()
 
-        uns += f'{first}-{last},' if first != last else f'{first},'
-    return uns.rstrip(',')
+        answer += f'{first}-{last},' if first != last else f'{first},'
+    print(lst)
+    return answer.rstrip(',')
 
 
 def main():
-    lst = [4, 7, 10]
+    lst = [0, 1, 2, 3, 4, 7, 8, 10]
     print(get_ranges(lst))
+
 
 
 if __name__ == '__main__':
