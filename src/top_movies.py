@@ -21,21 +21,29 @@ def get_info(line):
     return rank, ' '.join(title), year[1:-1:]
 
 
+def open_file(filename):
+    movies = []
+    ratings = {}
+    years = {}
+    with open(filename) as f:
+        line = ''
+        while line != SEPARATOR:
+            line = f.readline()
+        for _ in range(250):
+            line = f.readline()
+            rating, title, year = get_info(line)
+            movies.append(title)
+            ratings[rating] = ratings.get(rating, 0) + 1
+            years[year] = years.get(year, 0) + 1
+    return movies, ratings, years
+
+
 def get_data():
     movies = []
     ratings = {}
     years = {}
     try:
-        with open('./ratings.list') as f:
-            line = ''
-            while line != SEPARATOR:
-                line = f.readline()
-            for _ in range(250):
-                line = f.readline()
-                rating, title, year = get_info(line)
-                movies.append(title)
-                ratings[rating] = ratings.get(rating, 0) + 1
-                years[year] = years.get(year, 0) + 1
+        movies, ratings, years = open_file('./ratings.list')
     except FileNotFoundError:
         print('There are no file')
     return movies, ratings, years
