@@ -20,7 +20,9 @@ for i in range(int(input())):
     country, *cities = input().split()
     id_country[i] = country
     for city in cities:
-        city_id[city] = i
+        city_id[city] = city_id.get(city, [])
+        city_id[city].append(i)
 
 for i in range(int(input())):
-    print(id_country[city_id[input()]])
+    for idx in city_id[input()]:
+        print(id_country[idx])
