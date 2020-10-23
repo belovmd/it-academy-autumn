@@ -11,7 +11,8 @@ def save(func):
         result = func(*args, **kwargs)
         with open('results.txt', 'a') as f:
             date_ = datetime.now()
-            f.write(str(date_) + ' ' + str(func.__name__) + ' ' + str(result) + '\n')
+            func_name = func.__name__
+            f.write(str(date_) + ' ' + func_name + ' ' + str(result) + '\n')
         return result
     return wrapper
 
