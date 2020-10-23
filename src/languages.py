@@ -11,6 +11,7 @@ for student in range(int(input())):
     for language in range(int(input())):
         languages[student].add(input())
 print(languages)
-all_, any_ = set.intersection(*languages), set.union(*languages)
+all_ = set.intersection(*languages)
+any_ = set.union(*languages)
 print(len(all_), *all_, sep='\n')
 print(len(any_), *any_, sep='\n')
