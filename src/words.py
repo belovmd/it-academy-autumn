@@ -7,10 +7,9 @@
 Определите, сколько различных слов содержится в этом тексте.
 """
 
-
-str_ = 'abc abc abd abd  ' \
-       '  abdd abddd abd anc \n a a a aaa ' \
-       'a aaa aa aa \n \n \n abc abc'
+str_ = ('abc abc abd abd  '
+        '  abdd abddd abd anc \n a a a aaa '
+        'a aaa aa aa \n \n \n abc abc')
 
 set_ = set(str_.split())
 print(*set_)
