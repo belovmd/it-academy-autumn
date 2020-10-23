@@ -14,17 +14,16 @@ def get_range_str(lst):
 
 def get_ranges(lst):
     result = ''
-    rng = []
+    ranges = []
     for ind, el in enumerate(lst):
-        if not rng:
-            rng.append(el)
+        if not ranges:
+            ranges.append(el)
+        elif el == ranges[-1] + 1:
+            ranges.append(el)
         else:
-            if el == rng[-1] + 1:
-                rng.append(el)
-            else:
-                result += get_range_str(rng)
-                rng = [el]
-    return (result + get_range_str(rng))[:-1]
+            result += get_range_str(ranges)
+            ranges = [el]
+    return (result + get_range_str(ranges))[:-1]
 
 
 if __name__ == '__main__':
