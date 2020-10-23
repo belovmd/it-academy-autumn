@@ -6,7 +6,7 @@ runner(‘func_name’) – вызывается только функцию fun
 runner(‘func’, ‘func1’...) - вызывает все переданные функции
 """
 
-
+import inspect
 import runner_test
 
 
@@ -19,7 +19,7 @@ def runner(module, *argc):
     attr_list = dir(module)
     for attr_name in attr_list:
         attr = getattr(module, attr_name)
-        if type(attr).__name__ == 'function':
+        if inspect.isfunction(attr):
             if call_all:
                 attr()
             else:
