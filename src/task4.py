@@ -30,8 +30,8 @@ try:
             lst_ratings.append(new_line_ratings + '\n')
             lst_years.append(new_line_years + '\n')
 
-            with open(top250_movies, 'w', newline='\n', encoding='utf-8') as myfile2:
-                myfile2.writelines(lst_top250_movies)
+            with open(top250_movies, 'w', newline='\n', encoding='utf-8') as f:
+                f.writelines(lst_top250_movies)
 
             with open(ratings, 'w', newline='\n', encoding='utf-8') as myfile3:
                 myfile3.writelines(lst_ratings)
