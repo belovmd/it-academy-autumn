@@ -29,10 +29,9 @@ number_student = int(input())
 for student in range(number_student):
     kol_languages = int(input())
     for language in range(kol_languages):
-        language = input()
-        lst.append(language)
-        var = [el for el in lst]
-for word in var:
+        languages = input()
+        lst.append(languages)
+for word in lst:
     dct[word] = dct.get(word, 0) + 1
 for word in dct:
     if dct[word] == number_student:

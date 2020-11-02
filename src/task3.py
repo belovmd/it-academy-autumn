@@ -5,6 +5,5 @@
 """
 lst_1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 lst_2 = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-total_different = set(lst_1) ^ set(lst_2)
-print(total_different)
-print(len(list(total_different)))
+print(set(lst_1) & set(lst_2))
+print(len(list(set(lst_1) & set(lst_2))))
