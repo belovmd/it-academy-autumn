@@ -27,13 +27,12 @@ def block_to_string(array):
 
 
 def zipped_string(array):
-    result_string = ""
     index = 0
+    result_array = []
     while index != len(array):
         block, index = get_packed_block(index, array)
-        result_string += "," if result_string else ""
-        result_string += block_to_string(block)
-    print(result_string)
+        result_array.append(block_to_string(block))
+    print(",".join(result_array))
 
 
 zipped_string([0, 1, 2, 3, 4, 7, 8, 10])
