@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %} Профиль {% endblock %}
+
+{% block content %}
+    <a href="{% url "blog:edit_user" %}">Редактировать профиль</a>
+    <a href="{% url "blog:all_materials" %}"> <h2> <i> Все статьи </i></h2> </a>
+    <p>birthday:{{ user.profile.birth }}</p>
+    <p>name: {{ user.first_name|add:user.last_name }}</p>
+    {% if user.profile.photo %}
+        <p><img src="{{ user.profile.photo.url }}" alt = "{{ user.first_name }}"></p>
+    {% endif %}
+{% endblock %}
+

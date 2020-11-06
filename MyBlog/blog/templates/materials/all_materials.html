@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Все статьи
+{% endblock %}
+
+
+{% block content %}
+     <H1>ВСЕ СТАТЬИ</H1>
+
+    {% for material in materials %}
+     <div class="col-sm-8 blog-main">
+     <h2>
+         <a href="{{material.get_absolute_url }}">
+         {{ material.title}}
+         </a>
+
+     </h2>
+     <p>
+         Автор статьи: {{ material.author }}
+     </p>
+     <p>
+         Опубликовано: {{ material.publish }}
+     </p>
+
+     <p>
+        {{ material.body|truncatewords:150}}
+     </p>
+    </div>
+
+     {% endfor %}
+
+
+{% endblock %}

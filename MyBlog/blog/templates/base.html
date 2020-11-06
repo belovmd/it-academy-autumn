@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% load bootstrap3 %}
+    <script src="{% bootstrap_jquery_url %}"></script>
+    {% bootstrap_javascript %}
+    {% bootstrap_css %}
+
+    <meta charset="UTF-8">
+    <title>{% block title %}DEFAULT TITLE {% endblock %}</title>
+    <link href="{% static 'styles.css'%}" rel='stylesheet' >
+</head>
+<body>
+{% if request.user.is_authenticated %}
+    Привет! {{ request.user.first_name }}
+    <a href="{% url "blog:all_materials" %}">  Все статьи </a>
+    <a href="{% url "blog:logout" %}">Выход</a>
+    <a href="{% url "blog:profile" %}">Профиль</a>
+{% else %}
+    <a href="{% url "blog:login" %}">Войти</a>
+    <a href="{% url "blog:register" %}">Регистрация</a>
+{% endif %}
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>
+

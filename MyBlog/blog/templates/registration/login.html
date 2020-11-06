@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %} Регистрация! {% endblock %}
+
+{% block content %}
+    <h2>Введите пароль:</h2>
+    {% if form.errors %}
+    ОШИБКА ФОРМЫ!
+    {% endif %}
+    <form action="" method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <input type ="hidden" name = "next" value ="{{ next }}">
+        <input type="submit" value="Login">
+    </form>
+    <a href="{% url "blog:all_materials" %}"> <h2> <i> Все статьи </i></h2> </a>
+<a href="{%  url "blog:password_reset" %}">Забыли пароль?</a>
+<p><a href="{% url 'social:begin' 'vk-oauth2' %}">Войти через ВКонтакте</a></p>
+
+{% endblock %}

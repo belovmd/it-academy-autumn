@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ material.title }}
+{% endblock %}
+
+{% block content %}
+    <a href="{% url "blog:all_materials" %}"> <h2> <i> Все статьи </i></h2> </a>
+    <H1>{{ material.title}}</H1>
+
+        <div class="col-sm-8 blog-main">
+
+            <p>
+                {{ material.body|linebreaks }}
+            </p>
+            <p>
+                Опубликовано: {{ material.publish }}
+                Автор: {{ material.author }}
+            </p>
+
+            <p>
+                <a href="{% url "blog:share_material" material.id%}"> Отправить статью по почте </a>
+            </p>
+            <p>
+            {% with material.comments.count as total_comments %}
+                <h3>{{ total_comments }} comment {{ total_comments|pluralize }}</h3>
+            {% endwith %}
+
+            {% for comment in material.comments.all %}
+                <p>Комментарий  #{{ forloop.counter }} оставил {{ comment.name }}</p>
+                {{ comment.body }}<br>
+            {% empty %}
+                Комментариев еще нет
+            {% endfor %}
+                    <form action="." method="post">
+                    {{ form.as_p }}
+                    {% csrf_token %}
+                    <input type="submit" value="Добавить комментарий">
+                </form>
+
+
+            </p>
+        </div>
+
+
+
+
+{% endblock %}

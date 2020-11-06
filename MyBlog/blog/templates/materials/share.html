@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %} Отправка статьи {% endblock %}
+
+{% block content %}
+    <a href="{% url "blog:all_materials" %}"> <h2> <i> Все статьи </i></h2> </a>
+    {% if sent %}
+        <p>Статья  <u>{{ material.title }}</u>  отправлена  на ваш E-mail {{form.to_email}}</p>
+    {% else %}
+        <h2>Статья <u>{{ material.title }}</u> готова к отправке, введите ваш E-mail:</h2>
+
+        <form action="." method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input type="submit" value="ОТПРАВИТЬ">
+        </form>
+    {% endif %}
+{% endblock %}
